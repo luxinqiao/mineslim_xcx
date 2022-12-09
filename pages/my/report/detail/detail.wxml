@@ -1,0 +1,364 @@
+<!--
+ * 文件描述：我的报告-详情
+ * 创建人：赵志银
+ * 创建时间：2020-04-09
+-->
+<wxs module='md_common' src='../../../../utils/common.wxs'></wxs>
+
+<view id='main'>
+    <view class='content'>
+        <view class='total list shadow'>
+            <view class='title'>健康总览</view>
+            <view>
+                <view>
+                    <view>健康评分</view>
+                    <view class='color_main'>{{reportObj.health_score}}</view>
+                </view>
+                <view>
+                    <view>身体年龄</view>
+                    <view class='color_main' wx:if='{{!md_common.isEmpty(reportObj.body_age)}}'>{{reportObj.body_age+'岁'}}</view>
+                </view>
+                <view>
+                    <view>体型判定</view>
+                    <view class='color_main'>{{reportObj.body_type}}</view>
+                </view>
+            </view>
+            <view class='data'>
+                <view class='datatit'>体脂率</view>
+                <view class='box'>
+                    <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                    <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{reportObj.body_fat_rate.lowest}}' highValue='{{reportObj.body_fat_rate.highest}}' value='{{reportObj.body_fat_rate.score}}' unit='{{reportObj.body_fat_rate.unit}}'></mdIndexChart>
+                </view>
+            </view>
+            <view class='data'>
+                <view class='datatit'>BMI</view>
+                <view class='box'>
+                    <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                    <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{reportObj.bmi.lowest}}' highValue='{{reportObj.bmi.highest}}' value='{{reportObj.bmi.score}}' unit='{{reportObj.bmi.unit}}'></mdIndexChart>
+                </view>
+            </view>
+        </view>
+
+        <!-- 体成分分析 -->
+        <view class='body list shadow'>
+            <view class='title'>体成分分析</view>
+            <view class='data'>
+                <view class='datatit'>体重</view>
+                <view class='box'>
+                    <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                    <mdIndexChart id='mdIndexChart' style='width: 478rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='478' type='number' lowValue='{{reportObj.weight.lowest}}' highValue='{{reportObj.weight.highest}}' value='{{reportObj.weight.score}}' unit='{{reportObj.weight.unit}}'></mdIndexChart>
+                </view>
+            </view>
+            <view class='data'>
+                <view class='datatit'>体脂总量</view>
+                <view class='box'>
+                    <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                    <mdIndexChart id='mdIndexChart' style='width: 478rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='478' type='number' lowValue='{{reportObj.body_fat.lowest}}' highValue='{{reportObj.body_fat.highest}}' value='{{reportObj.body_fat.score}}' unit='{{reportObj.body_fat.unit}}'></mdIndexChart>
+                </view>
+            </view>
+            <view class='data'>
+                <view class='datatit'>肌肉总量</view>
+                <view class='box'>
+                    <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                    <mdIndexChart id='mdIndexChart' style='width: 478rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='478' type='number' lowValue='{{reportObj.muscle.lowest}}' highValue='{{reportObj.muscle.highest}}' value='{{reportObj.muscle.score}}' unit='{{reportObj.muscle.unit}}'></mdIndexChart>
+                </view>
+            </view>
+            <view class='data'>
+                <view class='datatit'>水分总量</view>
+                <view class='box'>
+                    <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                    <mdIndexChart id='mdIndexChart' style='width: 478rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='478' type='number' lowValue='{{reportObj.water.lowest}}' highValue='{{reportObj.water.highest}}' value='{{reportObj.water.score}}' unit='{{reportObj.water.unit}}'></mdIndexChart>
+                </view>
+            </view>
+            <view class='data'>
+                <view class='datatit'>无机盐总量</view>
+                <view class='box'>
+                    <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                    <mdIndexChart id='mdIndexChart' style='width: 478rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='478' type='number' lowValue='{{reportObj.inorganic_salt.lowest}}' highValue='{{reportObj.inorganic_salt.highest}}' value='{{reportObj.inorganic_salt.score}}' unit='{{reportObj.inorganic_salt.unit}}'></mdIndexChart>
+                </view>
+            </view>
+            <view class='data'>
+                <view class='datatit'>蛋白质总量</view>
+                <view class='box'>
+                    <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                    <mdIndexChart id='mdIndexChart' style='width: 478rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='478' type='number' lowValue='{{reportObj.protein.lowest}}' highValue='{{reportObj.protein.highest}}' value='{{reportObj.protein.score}}' unit='{{reportObj.protein.unit}}'></mdIndexChart>
+                </view>
+            </view>
+        </view>
+
+        <!-- 健康解码 -->
+        <view class='health'>健康解码</view>
+
+        <view class='muscle list shadow'>
+            <view class='title'>
+                <image src='/images/pages/mineslim/keepDecode/muscle.png'></image>
+                <view>肌肉解码</view>
+            </view>
+            <view class='listCon'>
+                <view class='data third'>
+                    <view class='datatit'>躯干</view>
+                    <view class='box'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{reportObj.muscle_body.lowest}}' highValue='{{reportObj.muscle_body.highest}}' value='{{reportObj.muscle_body.score}}' unit='{{reportObj.muscle_body.unit}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>左上肢</view>
+                    <view class='box'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{reportObj.muscle_lu.lowest}}' highValue='{{reportObj.muscle_lu.highest}}' value='{{reportObj.muscle_lu.score}}' unit='{{reportObj.muscle_lu.unit}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>右上肢</view>
+                    <view class='box'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{reportObj.muscle_ru.lowest}}' highValue='{{reportObj.muscle_ru.highest}}' value='{{reportObj.muscle_ru.score}}' unit='{{reportObj.muscle_ru.unit}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>左下肢</view>
+                    <view class='box'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{reportObj.muscle_ll.lowest}}' highValue='{{reportObj.muscle_ll.highest}}' value='{{reportObj.muscle_ll.score}}' unit='{{reportObj.muscle_ll.unit}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>右下肢</view>
+                    <view class='box'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{reportObj.muscle_rl.lowest}}' highValue='{{reportObj.muscle_rl.highest}}' value='{{reportObj.muscle_rl.score}}' unit='{{reportObj.muscle_rl.unit}}'></mdIndexChart>
+                    </view>
+                </view>
+            </view>
+            <view class='people'>
+                <image src='/images/pages/mineslim/keepDecode/peo.png' class='bg'></image>
+                <image src='/images/pages/mineslim/keepDecode/llhand.png' class='lhand' wx:if='{{reportObj.muscle_lu.score < reportObj.muscle_lu.lowest}}'></image>
+                <image src='/images/pages/mineslim/keepDecode/mlhand.png' class='lhand' wx:if='{{reportObj.muscle_lu.score > reportObj.muscle_lu.highest}}'></image>
+
+                <image src='/images/pages/mineslim/keepDecode/lrhand.png' class='rhand' wx:if='{{reportObj.muscle_ru.score < reportObj.muscle_ru.lowest}}'></image>
+                <image src='/images/pages/mineslim/keepDecode/mrhand.png' class='rhand' wx:if='{{reportObj.muscle_ru.score > reportObj.muscle_ru.highest}}'></image>
+
+                <image src='/images/pages/mineslim/keepDecode/lmid.png' class='mid' wx:if='{{reportObj.muscle_body.score < reportObj.muscle_body.lowest}}'></image>
+                <image src='/images/pages/mineslim/keepDecode/mmid.png' class='mid' wx:if='{{reportObj.muscle_body.score > reportObj.muscle_body.highest}}'></image>
+
+                <image src='/images/pages/mineslim/keepDecode/llleg.png' class='lleg' wx:if='{{reportObj.muscle_ll.score < reportObj.muscle_ll.lowest}}'></image>
+                <image src='/images/pages/mineslim/keepDecode/mlleg.png' class='lleg' wx:if='{{reportObj.muscle_ll.score > reportObj.muscle_ll.highest}}'></image>
+
+                <image src='/images/pages/mineslim/keepDecode/lrleg.png' class='rleg' wx:if='{{reportObj.muscle_rl.score < reportObj.muscle_rl.lowest}}'></image>
+                <image src='/images/pages/mineslim/keepDecode/mrleg.png' class='rleg' wx:if='{{reportObj.muscle_rl.score > reportObj.muscle_rl.highest}}'></image>
+            </view>
+        </view>
+
+        <!-- 体脂解码 -->
+        <view class='muscle fat list shadow'>
+            <view class='title'>
+                <image src='/images/pages/my/report/faty.png'></image>
+                <view>体脂解码</view>
+            </view>
+            <view class='listCon'>
+                <view class='data'>
+                    <view class='datatit'>内脏脂肪</view>
+                    <view class='box'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{reportObj.viscera.lowest}}' highValue='{{reportObj.viscera.highest}}' value='{{reportObj.viscera.score}}' unit='{{reportObj.viscera.unit}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>躯干</view>
+                    <view class='three'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{reportObj.fat_body_status==1?"low":(reportObj.fat_body_status==2?"normal":"high")}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>左上肢</view>
+                    <view class='three'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{reportObj.fat_lu_status==1?"low":(reportObj.fat_lu_status==2?"normal":"high")}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>右上肢</view>
+                    <view class='three'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{reportObj.fat_ru_status==1?"low":(reportObj.fat_ru_status==2?"normal":"high")}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>左下肢</view>
+                    <view class='three'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{reportObj.fat_ll_status==1?"low":(reportObj.fat_ll_status==2?"normal":"high")}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='data third'>
+                    <view class='datatit'>右下肢</view>
+                    <view class='three'>
+                        <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                        <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{reportObj.fat_rl_status==1?"low":(reportObj.fat_rl_status==2?"normal":"high")}}'></mdIndexChart>
+                    </view>
+                </view>
+                <view class='people'>
+                    <image src='/images/pages/mineslim/keepDecode/peo.png' class='bg'></image>
+                        <image src='/images/pages/mineslim/keepDecode/llhand.png' class='lhand' wx:if='{{reportObj.fat_lu_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mlhand.png' class='lhand' wx:if='{{reportObj.fat_lu_status==3}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lrhand.png' class='rhand' wx:if='{{reportObj.fat_ru_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mrhand.png' class='rhand' wx:if='{{reportObj.fat_ru_status==3}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lmid.png' class='mid' wx:if='{{reportObj.fat_body_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mmid.png' class='mid' wx:if='{{reportObj.fat_body_status==3}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/llleg.png' class='lleg' wx:if='{{reportObj.fat_ll_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mlleg.png' class='lleg' wx:if='{{reportObj.fat_ll_status==3}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lrleg.png' class='rleg' wx:if='{{reportObj.fat_rl_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mrleg.png' class='rleg' wx:if='{{reportObj.fat_rl_status==3}}'></image>
+                </view>
+            </view>
+        </view>
+
+
+        <!-- 健康目标 -->
+        <view class='health'>健康目标</view>
+        <view class='tagCon'>
+            <view class='tagList shadow'>
+                <image src='/images/pages/my/report/weight.png'></image>
+                <view>
+                    <view>
+                        <text>体重</text>
+                        <text class='color_main'>{{reportObj.need_weight+reportObj.goal_weight_unit}}</text>
+                    </view>
+                    <view class='color_gray'>目标体重：{{reportObj.goal_weight+reportObj.goal_weight_unit}}</view>
+                </view>
+            </view>
+            <view class='tagList shadow'>
+                <image src='/images/pages/mineslim/keepDecode/fat.png'></image>
+                <view>
+                    <view>
+                        <text>体脂率</text>
+                        <text class='color_main'>{{reportObj.need_body_fat_rate+reportObj.goal_body_fat_rate_unit}}</text>
+                    </view>
+                    <view class='color_gray'>目标体脂率：{{reportObj.goal_body_fat_rate+reportObj.goal_body_fat_rate_unit}}</view>
+                </view>
+            </view>
+            <view class='tagList shadow'>
+                <image src='/images/pages/mineslim/keepDecode/muscle.png'></image>
+                <view>
+                    <view>
+                        <text>肌肉</text>
+                        <text class='color_main'>{{reportObj.need_muscle+reportObj.goal_muscle_unit}}</text>
+                    </view>
+                    <view class='color_gray'>目标肌肉：{{reportObj.goal_muscle+reportObj.goal_muscle_unit}}</view>
+                </view>
+            </view>
+            <view class='tagList shadow'>
+                <image src='/images/pages/mineslim/keepDecode/bmr.png'></image>
+                <view>
+                    <view>
+                        <text>BMR</text>
+                        <text class='color_main'>{{reportObj.need_bmr+reportObj.goal_bmr_unit}}</text>
+                    </view>
+                    <view class='color_gray'>目标BMR：{{reportObj.goal_bmr+reportObj.goal_bmr_unit}}</view>
+                </view>
+            </view>
+        </view>
+
+        <!-- 健康建议 -->
+        <view class='health'>健康建议</view>
+
+        <!-- 运动建议 -->
+        <view class='advice list shadow'>
+            <view class='title'>运动建议</view>
+
+            <view class='{{item.type==1?"adlisthot":"adlist"}}' wx:for='{{reportObj.recommend_sport}}' wx:key='index'>
+                <text class='t-icon {{"t-"+item.icon}} icon' wx:if='{{item.type==2}}'></text>
+                <view class='name'>{{item.name}}</view>
+                <view class='time color_gray' wx:if='{{item.type==1}}'>次数：{{item.times+item.times_unit}}  丨  描述：{{item.desc}}</view>
+                <view class='time color_gray' wx:if='{{item.type==2}}'>时间：{{item.times+item.times_unit}}  丨  耗能：{{item.consume+item.consume_unit}} 丨  减脂：{{item.met}}</view>
+            </view>
+            
+            <view class='tip'>
+                <view class='color_main'>小提示：</view>
+                <view>{{reportObj.sport_tips}}</view>
+            </view>
+        </view>
+
+        <!-- 饮食建议 -->
+        <view class='advice list shadow footadv' >
+            <view class='title'>饮食建议</view>
+            <view class='fadlist'>
+                <image src='/images/pages/my/report/energy.png'></image>
+                <view class='info'>总能量：{{reportObj.suggest_energy+reportObj.suggest_energy_unit}}</view>
+            </view>
+            <view class='fadlist'>
+                <image src='/images/pages/my/report/water.png'></image>
+                <view class='info'>总碳水：{{reportObj.suggest_carb+reportObj.suggest_carb_unit}}</view>
+            </view>
+            <view class='fadlist'>
+                <image src='/images/pages/my/report/protein.png'></image>
+                <view class='info'>总蛋白质：{{reportObj.suggest_protein+reportObj.suggest_protein_unit}}</view>
+            </view>
+            <view class='fadlist'>
+                <image src='/images/pages/my/report/fatb.png'></image>
+                <view class='info'>总脂肪：{{reportObj.suggest_fat+reportObj.suggest_fat_unit}}</view>
+            </view>
+            <view class='vitamin'>
+                <view>
+                    <view>钙</view>
+                    <view>{{reportObj.suggest_ca+reportObj.suggest_ca_unit}}</view>
+                </view>
+                <view>
+                    <view>铁</view>
+                    <view>{{reportObj.suggest_fe+reportObj.suggest_fe_unit}}</view>
+                </view>
+                <view>
+                    <view>VA</view>
+                    <view>{{reportObj.suggest_va+reportObj.suggest_va_unit}}</view>
+                </view>
+                <view>
+                    <view>VC</view>
+                    <view>{{reportObj.suggest_vc+reportObj.suggest_vc_unit}}</view>
+                </view>
+            </view>
+            <view class='tip'>
+                <view class='color_main'>小提示：</view>
+                <view>{{reportObj.diet_tips}}</view>
+            </view>
+        </view>
+
+    </view>
+
+    <!-- 总结 -->
+    <view class='summary' wx:if='{{!md_common.isEmpty(reportObj.suggestion)&&!md_common.isEmpty(reportObj.report_time)}}'>
+        <view class='left bg_main'></view>
+        <view class='tAdvice shadow'>
+            <view class='time color_gray'>本次测试时间：{{reportObj.report_time}}</view>
+            <view class='title'>针对您本次的报告，小麦建议您：</view>
+            <view class='adv'>
+                <rich-text nodes='{{reportObj.suggestion}}'></rich-text>
+            </view>
+        </view>
+    </view>
+
+</view>

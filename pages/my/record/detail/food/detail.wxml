@@ -1,0 +1,107 @@
+<!--
+ * 文件描述：饮食记录
+ * 创建人：赵志银
+ * 创建时间：2020-04-15
+-->
+<wxs module='md_common' src='../../../../../utils/common.wxs'></wxs>
+<view id='main' wx:if='{{isReady}}'>
+    <!-- 目标饮食方案 -->
+    <view class='plan'>
+        <view class='title'>
+            <view>目标饮食方案</view>
+            <image src='/images/pages/mineslim/index/ask.png' bindtap='introdUse' wx:if='{{!isFamily}}'></image>
+            <view class='time color_gray'>{{dataObj.date}}</view>
+        </view>
+        <view class='plancon'>
+            <view class='plancontit'>
+                <text>类别</text>
+                <text>名称</text>
+                <text>摄入量</text>
+            </view>
+            <view class='planconlist' wx:for='{{dataObj.target}}' wx:key='index'>
+                <text class='text_ellipsis'>{{item.type}}</text>
+                <text class='text_ellipsis'>{{item.name}}</text>
+                <text>{{!md_common.isEmpty(item.intake)?item.intake+item.intake_unit:'--'}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 营养评价 -->
+    <view class='plan evaluate'>
+        <view class='title'>营养评价</view>
+        <view class='plancon'>
+            <view class='evconlist'>
+                <text>总热能</text>
+                <text>{{dataObj.appraise.energy+dataObj.appraise.energy_unit}}</text>
+            </view>
+            <view class='evconlist'>
+                <text>碳水化合物</text>
+                <text>{{dataObj.appraise.carb+dataObj.appraise.carb_unit}}</text>
+            </view>
+            <view class='evconlist'>
+                <text>脂肪</text>
+                <text>{{dataObj.appraise.fat+dataObj.appraise.fat_unit}}</text>
+            </view>
+            <view class='evconlist'>
+                <text>蛋白质</text>
+                <text>{{dataObj.appraise.protein+dataObj.appraise.protein_unit}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 关键营养素提示 -->
+    <view class='plan tip'>
+        <view class='title'>关键营养素提示</view>
+        <view class='plancon'>
+            <view>
+                <text>钙</text>
+                <text>{{dataObj.nutrient.ca+dataObj.nutrient.ca_unit}}</text>
+            </view>
+            <view>
+                <text>铁</text>
+                <text>{{dataObj.nutrient.fe+dataObj.nutrient.fe_unit}}</text>
+            </view>
+            <view>
+                <text>VA</text>
+                <text>{{dataObj.nutrient.va+dataObj.nutrient.va_unit}}</text>
+            </view>
+            <view>
+                <text>VC</text>
+                <text>{{dataObj.nutrient.vc+dataObj.nutrient.vc_unit}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 分享 -->
+    <view class='shareBtn bg_main btn' bindtap='share' wx:if='{{!paramObj.isShare}}'>分享</view>
+
+</view>
+
+<mdDialog id="mdDialog"></mdDialog>
+
+<mdPopup id='mdPopup' isRound='true'>
+    <view class='indibPop'>
+        <view class='title'>作用</view>
+        <scroll-view class='indiCon' scroll-y>
+            <view class='list' wx:for='{{dataObj.target}}' wx:key='index'><text>{{item.name}}：</text><text class='color_gray'>{{item.effect}}</text></view>
+        </scroll-view>
+    </view>
+</mdPopup>
+
+<mdPopup id='mdPopupShare' isRound='true'>
+
+    <mdDialog id="mdDialogPop"></mdDialog>
+
+    <view class='sharePop'>
+        <mdPoster id='mdPoster' style='width:100%;height:928rpx;' canvasW='750' canvasH='928' randarH='568' r='190' nameList='{{dataObj.radar.name_list}}' dataList='{{dataObj.radar.data_list}}' title='我的饮食雷达图' desc='合理的营养摄入是健康生活的基础。'></mdPoster>
+        <view class='btnPopCon' wx:if='{{drawObj.isSuccess}}'>
+            <button class='btnPop friPop bg_main' open-type='share'>
+                <image src='/images/pages/mineslim/health/sport/weichat.png'></image>
+                <view>微信好友</view>
+            </button>
+            <view class='btnPop localPop bg_main'>
+                <image src='/images/pages/mineslim/health/sport/local.png'></image>
+                <view bindtap='save'>保存至本地</view>
+            </view>
+        </view>
+    </view>
+</mdPopup>

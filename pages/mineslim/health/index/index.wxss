@@ -1,0 +1,40 @@
+#main {
+    position: relative;
+    padding: 0 30rpx 130rpx 30rpx;
+}
+.title {
+    padding-top: 60rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; color: #000; font-weight: bold;
+    box-sizing: content-box;
+}
+.list {
+    position: relative;
+    margin-top: 30rpx;
+    width: 690rpx;
+}
+.list image {
+    width: 100%;
+}
+.list>view:nth-of-type(1) {
+    position: absolute;
+    top: 30rpx; left: 30rpx;
+    height: 84rpx; 
+    line-height: 84rpx;
+    font-size: 60rpx; color: #3B3B83;
+}
+.list>view:nth-of-type(1)>text {
+    height: 84rpx; 
+    line-height: 84rpx;
+    font-size: 60rpx; color: #5B3983; 
+    border-bottom: 2px solid #5B3983;
+}
+.list>view:nth-of-type(2) {
+    position: absolute;
+    top: 0; left: 30rpx; bottom: 0;
+    margin: auto;
+    height:28rpx; 
+    line-height: 28rpx;
+    font-size: 20rpx; color: #5B3983;
+}

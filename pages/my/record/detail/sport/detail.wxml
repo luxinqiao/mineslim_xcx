@@ -1,0 +1,68 @@
+<!--
+ * 文件描述：运动记录
+ * 创建人：赵志银
+ * 创建时间：2020-04-15
+-->
+<view id='main' wx:if='{{isReady}}'>
+    <!-- 目标运动方案 -->
+    <view class='plan'>
+        <view class='title'>
+            <view>目标运动方案</view>
+            <view class='time color_gray'>{{dataObj.date}}</view>
+        </view>
+        <view class='plancon'>
+            <view class='plancontit'>
+                <text>运动项目</text>
+                <text>运动类别</text>
+                <text>时长</text>
+            </view>
+            <view class='planconlist' wx:for='{{dataObj.target}}' wx:key='index'>
+                <text class='text_ellipsis'>{{item.name}}</text>
+                <text>{{item.type+"运动"}}</text>
+                <text>{{item.times+item.times_unit}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 方案评价 -->
+    <view class='plan evaluate'>
+        <view class='title'>方案评价</view>
+        <view class='plancon'>
+            <view class='evcontit'>
+                <text>运动项目</text>
+                <text>耗能</text>
+                <text>减脂</text>
+                <text>推荐次数</text>
+            </view>
+            <view class='evconlist' wx:for='{{dataObj.appraise}}' wx:key='index'>
+                <text class='text_ellipsis'>{{item.name}}</text>
+                <text class='text_ellipsis'>{{item.consume+item.consume_unit}}</text>
+                <text class='text_ellipsis'>{{item.met+item.met_unit}}</text>
+                <text class='text_ellipsis'>{{item.count+item.count_unit}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 打卡按钮分享 -->
+    <view class='shareBtn bg_main btn' bindtap='share' wx:if='{{!paramObj.isShare}}'>分享</view>
+</view>
+
+<mdDialog id="mdDialog"></mdDialog>
+
+<mdPopup id='mdPopup' isRound='true'>
+
+    <mdDialog id="mdDialogPop"></mdDialog>
+
+    <view class='sharePop'>
+        <mdPoster id='mdPoster' style='width:100%;height:928rpx;' canvasW='750' canvasH='928' randarH='568' r='196' nameList='{{dataObj.radar.name_list}}' dataList='{{dataObj.radar.data_list}}' title='我的运动雷达图' desc='规律的运动是追求幸福生活的筹码。'></mdPoster>
+        <view class='btnPopCon' wx:if='{{drawObj.isSuccess}}'>
+            <button class='btnPop friPop bg_main' open-type='share'>
+                <image src='/images/pages/mineslim/health/sport/weichat.png'></image>
+                <view>微信好友</view>
+            </button>
+            <view class='btnPop localPop bg_main'>
+                <image src='/images/pages/mineslim/health/sport/local.png'></image>
+                <view bindtap='save'>保存至本地</view>
+            </view>
+        </view>
+    </view>
+</mdPopup>

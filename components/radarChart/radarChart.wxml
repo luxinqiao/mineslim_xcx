@@ -1,0 +1,9 @@
+<!--
+	文件描述：雷达图组件
+	创建人：卢信桥
+	创建时间：2020-04-21
+ -->
+<view class='main'>
+	<canvas id='canvas' class='canvas' canvas-id='canvas' style='width:{{canvasW}}px;height:{{canvasH}}px;'></canvas>
+	<image id='canvasImg' class='canvasImg' src='{{canvasImg}}' style='height:{{canvasH/rate}}rpx;'></image>
+</view>

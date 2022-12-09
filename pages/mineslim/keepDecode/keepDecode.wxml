@@ -1,0 +1,311 @@
+<!--
+ * 文件描述：深度解码
+ * 创建人：赵志银
+ * 创建时间：2020-04-09
+-->
+<view id='main'>
+    <!-- tab -->
+    <view class='tab'>
+        <view class='tablist {{tabName=="evaluate"?"act":""}}' data-name='evaluate' bindtap='changeTab'>
+            <view>健康评价</view>
+            <view class='bg_main'></view>
+        </view>
+        <view class='tablist {{tabName=="wheat"?"act":""}}' data-name='wheat' bindtap='changeTab'>
+            <view>健康小麦</view>
+            <view class='bg_main'></view>
+        </view>
+    </view>
+
+    <!-- 内容 -->
+    <view class='content'>
+        <!-- 健康评价 -->
+        <view class='evaluate' hidden='{{tabName!="evaluate"}}'>
+            <view class='list weight'>
+                <view class='title'>
+                    <image src='/images/pages/mineslim/keepDecode/weight.png'></image>
+                    <view>体重解码</view>
+                </view>
+                <view class='listCon'>
+                    <view class='data'>
+                        <view class='datatit'>体重</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 478rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='478' type='number' lowValue='{{dataObj.weight.lowest}}' highValue='{{dataObj.weight.highest}}' value='{{dataObj.weight.score}}' unit='{{dataObj.weight.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data'>
+                        <view class='datatit'>BMI</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 478rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='478' type='number' lowValue='{{dataObj.bmi.lowest}}' highValue='{{dataObj.bmi.highest}}' value='{{dataObj.bmi.score}}' unit='{{dataObj.bmi.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='list muscle'>
+                <view class='title'>
+                    <image src='/images/pages/mineslim/keepDecode/muscle.png'></image>
+                    <view>肌肉解码</view>
+                </view>
+                <view class='listCon'>
+                    <view class='data'>
+                        <view class='datatit'>肌肉量</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{dataObj.muscle.lowest}}' highValue='{{dataObj.muscle.highest}}' value='{{dataObj.muscle.score}}' unit='{{dataObj.muscle.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data'>
+                        <view class='datatit'>蛋白质</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{dataObj.protein.lowest}}' highValue='{{dataObj.protein.highest}}' value='{{dataObj.protein.score}}' unit='{{dataObj.protein.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>躯干</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{dataObj.muscle_body.lowest}}' highValue='{{dataObj.muscle_body.highest}}' value='{{dataObj.muscle_body.score}}' unit='{{dataObj.muscle_body.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>左上肢</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{dataObj.muscle_lu.lowest}}' highValue='{{dataObj.muscle_lu.highest}}' value='{{dataObj.muscle_lu.score}}' unit='{{dataObj.muscle_lu.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>右上肢</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{dataObj.muscle_ru.lowest}}' highValue='{{dataObj.muscle_ru.highest}}' value='{{dataObj.muscle_ru.score}}' unit='{{dataObj.muscle_ru.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>左下肢</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{dataObj.muscle_ll.lowest}}' highValue='{{dataObj.muscle_ll.highest}}' value='{{dataObj.muscle_ll.score}}' unit='{{dataObj.muscle_ll.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>右下肢</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='320' type='number' lowValue='{{dataObj.muscle_rl.lowest}}' highValue='{{dataObj.muscle_rl.highest}}' value='{{dataObj.muscle_rl.score}}' unit='{{dataObj.muscle_rl.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='people'>
+                        <image src='/images/pages/mineslim/keepDecode/peo.png' class='bg'></image>
+                        <image src='/images/pages/mineslim/keepDecode/llhand.png' class='lhand' wx:if='{{dataObj.muscle_lu.score < dataObj.muscle_lu.lowest}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mlhand.png' class='lhand' wx:if='{{dataObj.muscle_lu.score > dataObj.muscle_lu.highest}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lrhand.png' class='rhand' wx:if='{{dataObj.muscle_ru.score < dataObj.muscle_ru.lowest}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mrhand.png' class='rhand' wx:if='{{dataObj.muscle_ru.score > dataObj.muscle_ru.highest}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lmid.png' class='mid' wx:if='{{dataObj.muscle_body.score < dataObj.muscle_body.lowest}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mmid.png' class='mid' wx:if='{{dataObj.muscle_body.score > dataObj.muscle_body.highest}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/llleg.png' class='lleg' wx:if='{{dataObj.muscle_ll.score < dataObj.muscle_ll.lowest}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mlleg.png' class='lleg' wx:if='{{dataObj.muscle_ll.score > dataObj.muscle_ll.highest}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lrleg.png' class='rleg' wx:if='{{dataObj.muscle_rl.score < dataObj.muscle_rl.lowest}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mrleg.png' class='rleg' wx:if='{{dataObj.muscle_rl.score > dataObj.muscle_rl.highest}}'></image>
+                    </view>
+                </view>
+            </view>
+
+            <view class='list fat '>
+                <view class='title'>
+                    <image src='/images/pages/mineslim/keepDecode/fat.png'></image>
+                    <view>体脂解码</view>
+                </view>
+                <view class='listCon'>
+                    <view>
+                        <text>体脂总量</text><text class='color_main'>{{dataObj.body_fat.score+dataObj.body_fat.unit}}</text>
+                    </view>
+                    <view class='data'>
+                        <view class='datatit'>体脂率</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{dataObj.body_fat_rate.lowest}}' highValue='{{dataObj.body_fat_rate.highest}}' value='{{dataObj.body_fat_rate.score}}' unit='{{dataObj.body_fat_rate.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data'>
+                        <view class='datatit'>内脏脂肪</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{dataObj.viscera.lowest}}' highValue='{{dataObj.viscera.highest}}' value='{{dataObj.viscera.score}}' unit='{{dataObj.viscera.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>躯干</view>
+                        <view class='three'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{dataObj.fat_body_status==1?"low":(dataObj.fat_body_status==2?"normal":"high")}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>左上肢</view>
+                        <view class='three'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{dataObj.fat_lu_status==1?"low":(dataObj.fat_lu_status==2?"normal":"high")}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>右上肢</view>
+                        <view class='three'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{dataObj.fat_ru_status==1?"low":(dataObj.fat_ru_status==2?"normal":"high")}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>左下肢</view>
+                        <view class='three'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{dataObj.fat_ll_status==1?"low":(dataObj.fat_ll_status==2?"normal":"high")}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data third'>
+                        <view class='datatit'>右下肢</view>
+                        <view class='three'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 320rpx; height: 70rpx;position: absolute;top: -14rpx; left: 0;' canvasW='320' type='category' lowCategoryValue='不足' normalCategoryValue='正常' highCategoryValue='过量' active='{{dataObj.fat_rl_status==1?"low":(dataObj.fat_rl_status==2?"normal":"high")}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='people'>
+                        <image src='/images/pages/mineslim/keepDecode/peo.png' class='bg'></image>
+                        <image src='/images/pages/mineslim/keepDecode/llhand.png' class='lhand' wx:if='{{dataObj.fat_lu_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mlhand.png' class='lhand' wx:if='{{dataObj.fat_lu_status==3}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lrhand.png' class='rhand' wx:if='{{dataObj.fat_ru_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mrhand.png' class='rhand' wx:if='{{dataObj.fat_ru_status==3}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lmid.png' class='mid' wx:if='{{dataObj.fat_body_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mmid.png' class='mid' wx:if='{{dataObj.fat_body_status==3}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/llleg.png' class='lleg' wx:if='{{dataObj.fat_ll_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mlleg.png' class='lleg' wx:if='{{dataObj.fat_ll_status==3}}'></image>
+
+                        <image src='/images/pages/mineslim/keepDecode/lrleg.png' class='rleg' wx:if='{{dataObj.fat_rl_status==1}}'></image>
+                        <image src='/images/pages/mineslim/keepDecode/mrleg.png' class='rleg' wx:if='{{dataObj.fat_rl_status==3}}'></image>
+                    </view>
+                </view>
+            </view>
+
+            <view class='list water'>
+                <view class='title'>
+                    <image src='/images/pages/mineslim/keepDecode/bmr.png'></image>
+                    <view>水分无机盐解码</view>
+                </view>
+                <view class='listCon'>
+                    <view>
+                        <text>内外液比</text><text class='color_main'>{{dataObj.liquid_ratio}}</text>
+                    </view>
+                    <view class='data'>
+                        <view class='datatit'>总水分</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+
+                            <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{dataObj.water.lowest}}' highValue='{{dataObj.water.highest}}' value='{{dataObj.water.score}}' unit='{{dataObj.water.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                    <view class='data'>
+                        <view class='datatit'>无机盐</view>
+                        <view class='box'>
+                            <mdDialog id="mdDialog" loadStyle='width: 70rpx; height: 70rpx;'></mdDialog>
+                            
+                            <mdIndexChart id='mdIndexChart' style='width: 528rpx; height: 92rpx;position: absolute;top: -54rpx; left: 0;' canvasW='528' type='number' lowValue='{{dataObj.inorganic_salt.lowest}}' highValue='{{dataObj.inorganic_salt.highest}}' value='{{dataObj.inorganic_salt.score}}' unit='{{dataObj.inorganic_salt.unit}}'></mdIndexChart>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+
+        <!-- 健康小麦 -->
+        <view class='wheat' hidden='{{tabName!="wheat"}}'>
+            <view class='wlist posture'>
+                <view class='wtitle'>体态分析</view>
+                <view class='wcontent'>
+                    <view class='people'>
+                        <image src='/images/pages/mineslim/keepDecode/peo.png'></image>
+                        <image src='/images/pages/mineslim/keepDecode/peobg.png'></image>
+                    </view>
+                    <view class='recordList'>
+                        <view>身体年龄</view>
+                        <view class='color_main'>{{wheatObj.body_age+'岁'}}</view>
+                    </view>
+                    <view class='recordList'>
+                        <view>我的体型</view>
+                        <view class='color_main'>{{wheatObj.body_type}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='wlist target'>
+                <view class='wtitle'>目标控制</view>
+                <view class='wcontent'>
+                    <view class='recordList'>
+                        <view>理想体重</view>
+                        <view class='color_main'>{{wheatObj.goal_weight+wheatObj.goal_weight_unit}}</view>
+                    </view>
+                    <view class='recordList'>
+                        <view>体脂控制</view>
+                        <view class='color_main'>{{wheatObj.goal_body_fat_rate+wheatObj.goal_body_fat_rate_unit}}</view>
+                    </view>
+                    <view class='recordList'>
+                        <view>肌肉控制</view>
+                        <view class='color_main'>{{wheatObj.goal_muscle+wheatObj.goal_muscle_unit}}</view>
+                    </view>
+                    <view class='recordList'>
+                        <view>基础代谢</view>
+                        <view class='color_main'>{{wheatObj.goal_bmr+wheatObj.goal_bmr_unit}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class='sharebtn' wx:if='{{!paramObj.isShare&&isReady}}'>
+        <view class='bg_main' bindtap='share'>分享</view>
+    </view>
+</view>
+
+<mdDialog id="mdDialogAll"></mdDialog>
+
+<mdPopup id='mdPopupShare' isRound='true'>
+
+    <mdDialog id="mdDialogPop"></mdDialog>
+
+    <view class='sharePop'>
+        <mdPoster id='mdPoster' style='width:100%;height:928rpx;' canvasW='750' canvasH='928' randarH='568' r='190' nameList='{{radarObj.name_list}}' dataList='{{radarObj.data_list}}' title='我的健康指标' desc='挣再多的钱，也需要有一副好身体去享受。'></mdPoster>
+        <view class='btnPopCon' wx:if='{{drawObj.isSuccess}}'>
+            <button class='btnPop friPop bg_main' open-type='share'>
+                <image src='/images/pages/mineslim/health/sport/weichat.png'></image>
+                <view>微信好友</view>
+            </button>
+            <view class='btnPop localPop bg_main'>
+                <image src='/images/pages/mineslim/health/sport/local.png'></image>
+                <view bindtap='save'>保存至本地</view>
+            </view>
+        </view>
+    </view>
+</mdPopup>

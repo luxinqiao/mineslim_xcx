@@ -1,0 +1,10 @@
+<!--
+ * 文件描述：弹出层组件
+ * 创建人：段素栋
+ * 创建时间：2019-08-19
+-->
+<view class="popupBox" wx:if="{{isShow}}" style="background-color: {{isOverlay ? 'rgba(0, 0, 0, 0.3)' : ''}}; height: 100%; width: 100%" catchtap="clickBox" catchtouchmove="{{true}}">
+    <view animation="{{animation}}" class="popupView {{position}} {{isRound ? position : ''}}Round" id="jkpopup" catchtap="clickSlot">
+        <slot></slot>
+    </view>
+</view>

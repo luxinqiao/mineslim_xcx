@@ -1,0 +1,94 @@
+<!--
+ * 文件描述：我的记录
+ * 创建人：赵志银
+ * 创建时间：2020-04-09
+-->
+<wxs module='md_common' src='../../../../utils/common.wxs'></wxs>
+
+<view id='main' class='{{md_common.isEmpty(sportObj.dataArr)&&md_common.isEmpty(foodObj.dataArr)&&sportObj.isReady&&foodObj.isReady?"hasNone":""}}'>
+
+    <view class='none' wx:if='{{md_common.isEmpty(sportObj.dataArr)&&md_common.isEmpty(foodObj.dataArr)&&sportObj.isReady&&foodObj.isReady}}'>
+        <image src='/images/pages/my/report/empty.png'></image>
+        <view>抱歉，暂无信息</view>
+    </view>
+
+    <!-- tab -->
+    <view class='tab' wx:if='{{(!md_common.isEmpty(sportObj.dataArr)||!md_common.isEmpty(foodObj.dataArr))&&foodObj.isReady&&sportObj.isReady}}'>
+        <view class='tablist {{tabName=="sport"?"act":""}}' data-name='sport' bindtap='changeTab'>
+            <view>运动记录</view>
+            <view class='bg_main'></view>
+        </view>
+        <view class='tablist {{tabName=="food"?"act":""}}' data-name='food' bindtap='changeTab'>
+            <view>饮食记录</view>
+            <view class='bg_main'></view>
+        </view>
+    </view>
+
+    <view class='total' wx:if='{{(!md_common.isEmpty(sportObj.dataArr)||!md_common.isEmpty(foodObj.dataArr))&&(sportObj.isReady||foodObj.isReady)}}'>
+
+        <!-- 运动 -->
+        <view class='sport' wx:if='{{tabName=="sport"}}'>
+            <view class='none' wx:if='{{md_common.isEmpty(sportObj.dataArr)&&sportObj.isReady}}'>
+                <image src='/images/pages/my/report/empty.png'></image>
+                <view>抱歉，暂无信息</view>
+            </view>
+
+            <view class='tcon' wx:if='{{!md_common.isEmpty(sportObj.dataArr)&&sportObj.isReady}}'>
+                <view class='list' wx:for='{{sportObj.dataArr}}' wx:key='index'>
+                    <view class='month'>{{item.month}}</view>
+                    <view class='content'>
+                        <view class='daylist' bindtap='goDetail' data-id='{{ite.record_id}}' data-date='{{ite.date}}' data-type='{{ite.type}}' wx:for='{{item.list}}' data-markid='{{ite.mark_id}}' wx:for-index='idx' wx:for-item='ite' wx:key='idx'>
+                            <view>{{ite.name}}</view>
+                            <view>
+                                <text class='color_gray'>{{ite.date}}</text>
+                                <image src='/images/pages/my/index/back.png'></image>
+                            </view>
+                        </view>
+                        
+                    </view>
+                </view>
+                
+                <view class='nomore' wx:if='{{sportObj.is_last=="1"}}'>-没有更多内容-</view>
+                <view class="loading" wx:if="{{sportObj.isLoading}}">
+                    <text>●</text>
+                    <text>●</text>
+                    <text>●</text>
+                </view>
+
+            </view>
+        </view>
+
+        <!-- 食物 -->
+        <view class='food' wx:if='{{tabName=="food"}}'>
+            <view class='none' wx:if='{{md_common.isEmpty(foodObj.dataArr)&&foodObj.isReady}}'>
+                <image src='/images/pages/my/report/empty.png'></image>
+                <view>抱歉，暂无信息</view>
+            </view>
+
+            <view class='tcon' wx:if='{{!md_common.isEmpty(foodObj.dataArr)&&foodObj.isReady}}'>
+                <view class='list' wx:for='{{foodObj.dataArr}}' wx:key='index'>
+                    <view class='month'>{{item.month}}</view>
+                    <view class='content'>
+                        <view class='daylist' bindtap='goDetail' data-id='{{ite.id}}' data-date='{{ite.date}}' data-name='{{ite.name}}' data-markid='{{ite.mark_id}}' wx:for='{{item.list}}' wx:for-index='idx' wx:for-item='ite' wx:key='idx'>
+                            <view>{{ite.name}}</view>
+                            <view>
+                                <text class='color_gray'>{{ite.date}}</text>
+                                <image src='/images/pages/my/index/back.png'></image>
+                            </view>
+                        </view>
+                        
+                    </view>
+                </view>
+                
+                <view class='nomore' wx:if='{{foodObj.is_last=="1"}}'>-没有更多内容-</view>
+                <view class="loading" wx:if="{{foodObj.isLoading}}">
+                    <text>●</text>
+                    <text>●</text>
+                    <text>●</text>
+                </view>
+
+            </view>
+
+        </view>
+    </view>
+</view>

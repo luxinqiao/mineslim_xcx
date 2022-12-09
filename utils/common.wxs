@@ -1,0 +1,77 @@
+/**
+	文件描述：通用工具类
+	创建人：卢信桥
+	创建时间：2020-03-19
+ */
+
+/**
+    是否为空
+    @param {String}a 变量
+    @return {Boolean} 是否为空
+*/
+var isEmpty = function (a) {
+	if (a === undefined || a === 'undefined' || a === null || a === 'null' || a === '' ||
+		JSON.stringify(a) === '{}' || JSON.stringify(a) === '[]') {
+		return true
+	}
+	return false
+}
+
+/**
+	日期反格式化
+	@param {String}dateStr 日期
+	@param {String}separator 分隔符
+	@return {Date} 新格式日期
+*/
+var parseDate = function (dateStr, separator) {
+	if (!separator) {
+		separator = '-'
+	}
+	var dateArr = dateStr.split(separator)
+	var year = parseInt(dateArr[0])
+	let month
+	if (dateArr[1].indexOf('0') == 0) {
+		month = parseInt(dateArr[1].substring(1))
+	} else {
+		month = parseInt(dateArr[1])
+	}
+	var day = parseInt(dateArr[2])
+	return new Date(year, month - 1, day)
+}
+
+/**
+	图片压缩
+	@param {Number}width 宽
+    @param {Number}height 高
+	@return {String} 压缩链接
+*/
+var compressImg = function (width, height) {
+	return '?x-oss-process=image/auto-orient,0/resize,m_lfit,h_' + height + ',w_' + width
+}
+
+/**
+ * 过滤人数
+ * @param {Number} peopleNum 人数
+ * @return {String} 过滤后的人数
+ */
+var propleFilter = function (peopleNum) {
+	if (!peopleNum && peopleNum != 0) {
+		return
+	}
+	if (parseInt(peopleNum) < 10000) {
+		return peopleNum
+	} else if (parseInt(peopleNum) < 100000000) {
+		var w = Math.floor(parseInt(peopleNum) / 1000) / 10
+		return w.toFixed(1) + 'w'
+	} else {
+		var y = Math.floor(parseInt(peopleNum) / 10000000) / 10
+		return y.toFixed(1) + 'y'
+	}
+}
+
+module.exports = {
+	isEmpty: isEmpty,
+	parseDate: parseDate,
+	compressImg: compressImg,
+	propleFilter: propleFilter
+}

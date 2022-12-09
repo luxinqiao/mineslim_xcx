@@ -1,0 +1,24 @@
+/**
+    获取选项的class
+    @param {Number} index 索引
+	@param {Number} currIndex 当前选中索引
+    @return {String} 选项class
+*/
+var getItemClass = function (index, currIndex) {
+	if (index == currIndex) {
+		return 'curr'
+	} else if (index == currIndex - 1) {
+		return 'pre1'
+	} else if (index == currIndex - 2) {
+		return 'pre2'
+	} else if (index == currIndex + 1) {
+		return 'next1'
+	} else if (index == currIndex + 2) {
+		return 'next2'
+	}
+	return ''
+}
+
+module.exports = {
+	getItemClass: getItemClass
+}

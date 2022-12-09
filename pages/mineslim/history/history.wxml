@@ -1,0 +1,128 @@
+<!--
+ * 文件描述：历史记录
+ * 创建人：赵志银
+ * 创建时间：2020-04-09
+-->
+<view id='main'>
+    <!-- tab -->
+    <view class='tab'>
+        <view class='tablist {{tabName=="week"?"act":""}}' data-name='week' bindtap='changeTab'>
+            <view>近一周</view>
+            <view class='bg_main'></view>
+        </view>
+        <view class='tablist {{tabName=="month"?"act":""}}' data-name='month' bindtap='changeTab'>
+            <view>近一月</view>
+            <view class='bg_main'></view>
+        </view>
+        <view class='tablist {{tabName=="season"?"act":""}}' data-name='season' bindtap='changeTab'>
+            <view>近三月</view>
+            <view class='bg_main'></view>
+        </view>
+    </view>
+
+    <view class='content'>
+        <!-- 近一周 -->
+        <view class='conlist' hidden='{{tabName!="week"}}'>
+
+            <view class='list'>
+                <view class='style'>体重变化趋势图（kg）</view>
+                
+                <mdDialog id="mdDialog1"></mdDialog>
+
+                <mdLineChart id='mdLineChartWW' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{oneWeekObj.weightObj.dataObj.xData}}' yData='{{oneWeekObj.weightObj.dataObj.yData}}' dataList='{{oneWeekObj.weightObj.dataObj.dataArr}}' color='#CD5B5C' markType='all'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>BMI变化趋势图</view>
+                <mdDialog id="mdDialog2"></mdDialog>
+                <mdLineChart id='mdLineChartWB' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{oneWeekObj.bmiObj.dataObj.xData}}' yData='{{oneWeekObj.bmiObj.dataObj.yData}}' dataList='{{oneWeekObj.bmiObj.dataObj.dataArr}}' color='#8F55CC' markType='all'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>体脂率变化趋势图(%)</view>
+                <mdDialog id="mdDialog3"></mdDialog>
+                <mdLineChart id='mdLineChartWF' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{oneWeekObj.fatObj.dataObj.xData}}' yData='{{oneWeekObj.fatObj.dataObj.yData}}' dataList='{{oneWeekObj.fatObj.dataObj.dataArr}}' color='#5A5AD1' markType='all'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>肌肉量变化趋势图(kg)</view>
+                <mdDialog id="mdDialog4"></mdDialog>
+                <mdLineChart id='mdLineChartWM' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{oneWeekObj.muscleObj.dataObj.xData}}' yData='{{oneWeekObj.muscleObj.dataObj.yData}}' dataList='{{oneWeekObj.muscleObj.dataObj.dataArr}}' color='#5BCD80' markType='all'></mdLineChart>
+            </view>
+
+            <!-- 建议 -->
+            <view class='advice'>
+                <view class='title'>阶段性建议：</view>
+                <view class='adv' wx:for='{{adviceArr}}' wx:key='index'>{{item.name}}：{{item.content}}</view>
+            </view>
+        </view>
+
+        <!-- 近一月 -->
+        <view class='conlist' hidden='{{tabName!="month"}}'>
+            <view class='list'>
+                <view class='style'>体重变化趋势图（kg）</view>
+                
+                <mdDialog id="mdDialog5"></mdDialog>
+
+                <mdLineChart id='mdLineChartOW' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{oneMonObj.weightObj.dataObj.xData}}' yData='{{oneMonObj.weightObj.dataObj.yData}}' dataList='{{oneMonObj.weightObj.dataObj.dataArr}}' color='#CD5B5C'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>BMI变化趋势图</view>
+                <mdDialog id="mdDialog6"></mdDialog>
+                <mdLineChart id='mdLineChartOB' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{oneMonObj.bmiObj.dataObj.xData}}' yData='{{oneMonObj.bmiObj.dataObj.yData}}' dataList='{{oneMonObj.bmiObj.dataObj.dataArr}}' color='#8F55CC'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>体脂率变化趋势图(%)</view>
+                <mdDialog id="mdDialog7"></mdDialog>
+                <mdLineChart id='mdLineChartOF' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{oneMonObj.fatObj.dataObj.xData}}' yData='{{oneMonObj.fatObj.dataObj.yData}}' dataList='{{oneMonObj.fatObj.dataObj.dataArr}}' color='#5A5AD1'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>肌肉量变化趋势图(kg)</view>
+                <mdDialog id="mdDialog8"></mdDialog>
+                <mdLineChart id='mdLineChartOM' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{oneMonObj.muscleObj.dataObj.xData}}' yData='{{oneMonObj.muscleObj.dataObj.yData}}' dataList='{{oneMonObj.muscleObj.dataObj.dataArr}}' color='#5BCD80'></mdLineChart>
+            </view>
+            <!-- 建议 -->
+            <view class='advice'>
+                <view class='title'>阶段性建议：</view>
+                <view class='adv' wx:for='{{adviceArr}}' wx:key='index'>{{item.name}}：{{item.content}}</view>
+            </view>
+        </view>
+
+        <!-- 近90天 -->
+        <view class='conlist' hidden='{{tabName!="season"}}'>
+            <view class='list'>
+                <view class='style'>体重变化趋势图（kg）</view>
+                
+                <mdDialog id="mdDialog9"></mdDialog>
+
+                <mdLineChart id='mdLineChartTW' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{threeMonObj.weightObj.dataObj.xData}}' yData='{{threeMonObj.weightObj.dataObj.yData}}' dataList='{{threeMonObj.weightObj.dataObj.dataArr}}' color='#CD5B5C'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>BMI变化趋势图</view>
+                <mdDialog id="mdDialog10"></mdDialog>
+                <mdLineChart id='mdLineChartTB' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{threeMonObj.bmiObj.dataObj.xData}}' yData='{{threeMonObj.bmiObj.dataObj.yData}}' dataList='{{threeMonObj.bmiObj.dataObj.dataArr}}' color='#8F55CC'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>体脂率变化趋势图(%)</view>
+                <mdDialog id="mdDialog11"></mdDialog>
+                <mdLineChart id='mdLineChartTF' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{threeMonObj.fatObj.dataObj.xData}}' yData='{{threeMonObj.fatObj.dataObj.yData}}' dataList='{{threeMonObj.fatObj.dataObj.dataArr}}' color='#5A5AD1'></mdLineChart>
+            </view>
+
+            <view class='list'>
+                <view class='style'>肌肉量变化趋势图(kg)</view>
+                <mdDialog id="mdDialog12"></mdDialog>
+                <mdLineChart id='mdLineChartTM' style='width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' xData='{{threeMonObj.muscleObj.dataObj.xData}}' yData='{{threeMonObj.muscleObj.dataObj.yData}}' dataList='{{threeMonObj.muscleObj.dataObj.dataArr}}' color='#5BCD80'></mdLineChart>
+            </view>
+            <!-- 建议 -->
+            <view class='advice'>
+                <view class='title'>阶段性建议：</view>
+                <view class='adv' wx:for='{{adviceArr}}' wx:key='index'>{{item.name}}：{{item.content}}</view>
+            </view>
+        </view>
+    </view>
+</view>

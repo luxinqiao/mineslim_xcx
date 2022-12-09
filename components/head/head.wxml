@@ -1,0 +1,11 @@
+<!--
+	文件描述：头部组件
+	创建人：卢信桥
+	创建时间：2020-04-08
+-->
+<view class='head'>
+	<view class='back' wx:if='{{isBack}}' bindtap='goBack'>
+		<image src='/images/common/back.png'></image>
+	</view>
+	<view class='title' style='{{titleStyle}}'>{{title}}</view>
+</view>

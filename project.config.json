@@ -1,0 +1,114 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.4",
+	"appid": "wx75c95e863c83d9da",
+	"projectname": "mineslim_xcx",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/mineslim/health/sport/index/index",
+					"pathName": "pages/mineslim/health/sport/index/index",
+					"query": "id=3&isShare=true",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mineslim/health/food/index/index",
+					"pathName": "pages/mineslim/health/food/index/index",
+					"query": "id=3&isShare=true",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/mineslim/health/food/index/index",
+					"pathName": "pages/mineslim/health/food/index/index",
+					"query": "id=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/report/detail/detail",
+					"pathName": "pages/my/report/detail/detail",
+					"query": "id=34",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mineslim/keepDecode/keepDecode",
+					"pathName": "pages/mineslim/keepDecode/keepDecode",
+					"query": "id=34",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/my/record/detail/food/detail",
+					"pathName": "pages/my/record/detail/food/detail",
+					"query": "id=58&recordId=46&isShare=true&name='家庭'",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/report/detail/detail",
+					"pathName": "pages/my/report/detail/detail",
+					"query": "id=50",
+					"scene": null
+				}
+			]
+		}
+	}
+}

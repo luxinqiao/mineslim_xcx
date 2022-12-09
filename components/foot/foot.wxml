@@ -1,0 +1,19 @@
+<!--
+	文件描述：头部组件
+	创建人：卢信桥
+	创建时间：2020-04-08
+-->
+<view class='foot'>
+	<view class='home menuItem' data-type='home' bindtap='goPage'>
+		<image src='/images/components/foot/home{{currActive=="home"?"-active":""}}.png'></image>
+		<text class='{{currActive=="home"?"color_main":""}}'>首页</text>
+	</view>
+	<view class='find menuItem' data-type='find' bindtap='goPage'>
+		<image src='/images/components/foot/find{{currActive=="find"?"-active":""}}.png'></image>
+		<text class='{{currActive=="find"?"color_main":""}}'>发现</text>
+	</view>
+	<view class='my menuItem' data-type='my' bindtap='goPage'>
+		<image src='/images/components/foot/my{{currActive=="my"?"-active":""}}.png'></image>
+		<text class='{{currActive=="my"?"color_main":""}}'>我的</text>
+	</view>
+</view>

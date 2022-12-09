@@ -1,0 +1,28 @@
+<!--
+	文件描述：登录
+	创建人：卢信桥
+	创建时间：2020-04-09
+-->
+<image id='heart' src='/images/sys/login/heart.png'></image>
+<text id='title'>您好</text>
+<text id='subTitle'>欢迎来到MineSlim，塑造健康生活。</text>
+<view id='phone' class='{{isFocusPhone ? "focus" : ""}}'>
+	<image src='/images/sys/login/phone.png'></image>
+	<input type='number' class='color_main' maxlength='11' bindinput='inputPhone' bindfocus='focusPhone' bindblur='blurPhone' placeholder='请输入您的手机号码' placeholder-style='color:#d3d3d3;' value='{{phone}}'></input>
+</view>
+<view id='code' class='{{isFocusCode ? "focus" : ""}}'>
+	<image src='/images/sys/login/code.png'></image>
+	<input type='number' class='color_main' maxlength='6' bindinput='inputCode' bindfocus='focusCode' bindblur='blurCode' placeholder='请输入您的验证码' placeholder-style='color:#d3d3d3;'></input>
+	<text class='color_main' bindtap='queryCode'>{{btnText=='获取验证码'?'获取验证码':'重发（'+btnText+'）'}}</text>
+</view>
+<view id='agent' bindtap='changeCheck'>
+	<image src='/images/sys/login/{{isCheck?"check":"uncheck"}}.png'></image>
+	<view>
+		<text>我已阅读并同意</text>
+		<text class='color_main' catchtap='goAgent'>《用户协议》</text>
+	</view>
+</view>
+<view id='button' class='bg_main' bindtap='login'>登录</view>
+<text id='version'>版本号：{{version}}</text>
+
+<mdDialog id='mdDialog'></mdDialog>

@@ -1,0 +1,25 @@
+<!--
+	文件描述：发现首页
+	创建人：卢信桥
+	创建时间：2020-04-13
+-->
+<view id='top'>
+	<image id='logo' src='/images/pages/mineslim/index/MineSlim.png'></image>
+	<view class='bg_main'>
+		<image src='/images/pages/find/index/balance.png'></image>
+		<text>发现</text>
+		<text>您身边的健康小助手</text>
+	</view>
+</view>
+<view id='food' bindtap='goFood'>
+	<image src='/images/pages/find/index/food.png'></image>
+	<text class='color_main'>营养知多少</text>
+	<text class='color_main'>为您详解总能量、关键营养素、所占供能比、推荐摄入量、食用方法等。</text>
+</view>
+<view id='sport' bindtap='goSport'>
+	<image src='/images/pages/find/index/sport.png'></image>
+	<text class='color_main'>运动知多少</text>
+	<text class='color_main'>为您详解运动、技术动作、适宜人 群、运动准备、运动耗能等。</text>
+</view>
+
+<mdFoot currActive='find'></mdFoot>

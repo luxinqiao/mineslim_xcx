@@ -1,0 +1,12 @@
+.main {
+	position: relative;
+}
+
+.canvas {
+	position: absolute;
+	top: -9999rpx; left: -9999rpx;
+}
+
+.canvasImg {
+	width: 100%; height: 100%;
+}

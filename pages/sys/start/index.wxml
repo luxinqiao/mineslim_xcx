@@ -1,0 +1,13 @@
+<!--
+ * 文件描述：启动页
+ * 创建人：赵志银
+ * 创建时间：2020-04-07
+-->
+<view id='main'>
+    <image src='/images/pages/sys/start/logo.png' class='logo'></image>
+    <view class='bottom'>
+        <image src='/images/pages/sys/start/bg.png' mode='widthFix' class='people'></image>
+        <view class='color_main'>健康可塑·智能到家</view>
+    </view>
+    <view class='time' wx:if='{{isShow}}' bindtap='goPage'>{{time+'S'}}</view>
+</view>

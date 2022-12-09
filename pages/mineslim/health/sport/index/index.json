@@ -1,0 +1,7 @@
+{
+	"navigationBarTitleText": "动起来更精彩",
+	"usingComponents": {
+        "mdPopup": "/components/popup/popup",
+        "mdPoster": "/components/poster/poster"
+    }
+}

@@ -1,0 +1,104 @@
+page {
+    background-color: #F7F8F8;
+}
+input {
+    text-align: right;
+}
+#main {
+    position: relative;
+    padding: 0 0 180rpx 0;
+}
+.content {
+    position: relative;
+    padding: 0 30rpx; margin-bottom: 30rpx;
+    background-color: #fff;
+}
+.list {
+    position: relative;
+    height: 100rpx;
+    border-bottom: 2rpx solid #D3D3D4;
+}
+.content>view:last-child {
+    border-bottom: 0;
+}
+.list>.title {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    margin: auto;
+    height: 42rpx; line-height: 42rpx;
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+.list>text:nth-of-type(2), .list>input, .list>view {
+    position: absolute;
+    top: 0; bottom: 0; right: 50rpx;
+    margin: auto;
+    height: 42rpx; line-height: 42rpx;
+    font-size: 30rpx; color: #000;
+}
+.list>view>input {
+    display: inline-block;
+    margin-right: 4rpx;
+    height: 42rpx !important; line-height: 42rpx;
+    text-align: right; vertical-align: middle;
+}
+.list>view>text {
+    display: inline-block;
+    height: 42rpx; line-height: 42rpx;
+    text-align: right; vertical-align: middle;
+}
+.address {
+    max-width: 400rpx;
+}
+.list .hasno {
+    color: #999 !important;
+}
+.list>.btn {
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    margin: auto;
+    width: 16rpx; height: 30rpx;
+}
+.img {
+    height: 216rpx;
+}
+.img image:nth-of-type(1) {
+    position: absolute;
+    top: 0; bottom: 0; right: 50rpx;
+    margin: auto;
+    width: 120rpx; height: 120rpx;
+    border-radius: 20rpx;
+}
+/* 简介 */
+.msg {
+    position: relative;
+    min-height: 176rpx;
+    padding: 10rpx 0 40rpx 0;
+}
+.msg textarea {
+    display: block;
+    width: 100%; min-height: 176rpx;
+}
+.msg text {
+    position: absolute;
+    bottom: 10rpx; right: 0;
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 24rpx;
+}
+
+/* 保存按钮 */
+.savebtn {
+    position: fixed;
+    bottom: 0; left: 0;
+    height: 140rpx; width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center; justify-content: center;
+    z-index: 2;
+}
+.savebtn cover-view {
+    height: 80rpx; width: 500rpx;
+    line-height: 80rpx; text-align: center;
+    border-radius: 20rpx;
+    font-size: 30rpx; color: #fff;
+}

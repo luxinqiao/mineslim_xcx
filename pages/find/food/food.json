@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "营养知多少",
+	"usingComponents": {
+		"mdSearch": "/components/search/search"
+	}
+}

@@ -1,0 +1,21 @@
+<!--
+ * 文件描述：意见反馈
+ * 创建人：赵志银
+ * 创建时间：2020-04-09
+-->
+<view id='main'>
+    <view class='content'>
+        <textarea type='text' bindinput='remark' placeholder='请详细描述您的问题，限140个字。' bindinput='content' maxlength='140' placeholder-style='font-size: 24rpx; color: #D3D3D4'></textarea>
+        <view class='imglist'>
+            <view class='img' wx:for='{{uploadObj.picsArr}}' wx:key="index">
+                <image src='{{item}}'></image>
+                <image src='/images/pages/my/feedback/close.png' bindtap='cancle' data-index='{{index}}'></image>
+            </view>
+            <view class='addImg' bindtap='upload' wx:if='{{uploadObj.max>0}}'>
+                <image src='/images/pages/my/feedback/add.png'></image>
+            </view>
+        </view>
+    </view>
+    <view class='btn {{contentData.length>0?"bg_main":"btnbg"}}' bindtap='submit'>提交</view>
+</view>
+<mdDialog id='mdDialog'></mdDialog>

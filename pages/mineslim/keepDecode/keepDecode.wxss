@@ -1,0 +1,390 @@
+page {
+    background-color: #fff;
+}
+#main {
+    position: relative;
+    padding: 0 30rpx 168rpx 30rpx;
+}
+
+/* tab */
+.tab {
+    position: fixed;
+    top: 0; left: 0;
+    height: 88rpx; width: 100%;
+    line-height: 88rpx;
+    z-index: 10;
+    background-color: #fff;
+}
+.tab>view:first-of-type {
+    float: left;
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+.tab>view:nth-of-type(2) {
+    float: right;
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+.tablist>view:first-of-type {
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+.tablist.act>view:last-child {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 4rpx; width: 50rpx;
+    border-radius: 2rpx;
+}
+
+/* 内容 */
+.content {
+    position: relative;
+    padding-top: 88rpx;
+}
+
+/* 健康评价 */
+.evaluate {
+    position: relative;
+}
+.evaluate .list {
+    position: relative;
+    padding-top: 60rpx;
+}
+.evaluate .list .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30rpx;
+    height: 50rpx;
+}
+.evaluate .list .title image{
+    margin-right: 20rpx;
+    width: 50rpx; height: 50rpx;
+}
+.evaluate .list .title view{
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+.evaluate .listCon {
+    position: relative;
+    padding: 40rpx 30rpx 46rpx 30rpx;
+    border-radius: 20rpx;
+    box-shadow:0px 20px 60px rgba(147,147,147,0.16);
+}
+.evaluate .data {
+    position: relative;
+    height: 34rpx;
+    display: flex;
+    align-items: center;
+}
+.evaluate .listCon .datatit {
+    height: 34rpx; line-height: 34rpx;
+    font-size: 24rpx;
+}
+
+/* 人体 */
+.evaluate .people {
+    position: relative;
+    width: 142rpx; height: 500rpx;
+}
+.evaluate .people .bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 142rpx; height: 500rpx;
+}
+.evaluate .people .lhand {
+    position: absolute;
+    top: 86rpx; left: 2rpx;
+    width: 34rpx; height: 214rpx;
+}
+.evaluate .people .rhand {
+    position: absolute;
+    top: 86rpx; right: 2rpx;
+    width: 32rpx; height: 218rpx;
+}
+.evaluate .people .mid {
+    position: absolute;
+    top: 76rpx; left: 30rpx;
+    width: 88rpx; height: 190rpx;
+    z-index: 2;
+}
+.evaluate .people .lleg {
+    position: absolute;
+    bottom: 0; left: 28rpx;
+    width: 46rpx; height: 268rpx;
+}
+.evaluate .people .rleg {
+    position: absolute;
+    bottom: 0; right: 24rpx;
+    width: 48rpx; height: 264rpx;
+}
+
+/* 体重解码 */
+.weight .data {
+    margin-top: 98rpx;
+}
+.weight .datatit {
+    width: 152rpx;
+}
+.weight .listCon>view:nth-of-type(1) {
+    margin-top: 26rpx;
+}
+.weight .listCon>view:last-of-type {
+    margin-bottom: 22rpx;
+}
+
+/* 肌肉解码 */
+.muscle .data {
+    margin-top: 98rpx;
+}
+.muscle .listCon>view:nth-of-type(1) {
+    margin-top: 26rpx;
+}
+.muscle .listCon>view:nth-of-type(3) {
+    margin-top: 118rpx;
+}
+.muscle .listCon>view:nth-last-of-type(2) {
+    margin-bottom: 22rpx;
+}
+.muscle .datatit {
+    width: 104rpx;
+}
+.muscle .data.third .box{
+    width: 320rpx;
+}
+.muscle .people {
+    position: absolute;
+    right: 36rpx; bottom: 104rpx
+}
+
+/* 体脂解码 */
+.fat .listCon>view:nth-of-type(1) {
+    position: relative;
+    height: 42rpx;
+    line-height: 42rpx;
+}
+.fat .listCon>view:nth-of-type(1)>text:nth-of-type(1) {
+    display: inline-block;
+    padding-left: 0; margin-right: 30rpx;
+    height: 42rpx;
+    line-height: 42rpx; vertical-align: top;
+    font-size: 24rpx;
+}
+.fat .listCon>view:nth-of-type(1)>text:nth-of-type(2) {
+    display: inline-block;
+    height: 42rpx;
+    line-height: 42rpx; vertical-align: top;
+    font-size: 30rpx;
+}
+.fat .listCon {
+    padding-bottom: 66rpx;
+}
+.fat .data {
+    margin-top: 98rpx;
+}
+.fat .listCon>view:nth-of-type(2) {
+    margin-top: 78rpx;
+}
+.fat .listCon>view:nth-of-type(4) {
+    margin-top: 118rpx;
+}
+.fat .datatit {
+    width: 104rpx; height: 34rpx;
+    line-height: 34rpx;
+}
+.fat .people {
+    position: absolute;
+    right: 36rpx; bottom: 104rpx
+}
+
+
+
+/* 水分无机盐 */
+.water .listCon>view:nth-of-type(1) {
+    position: relative;
+    height: 42rpx;
+    line-height: 42rpx;
+}
+.water .listCon>view:nth-of-type(1)>text:nth-of-type(1) {
+    display: inline-block;
+    padding-left: 6rpx; margin-right: 30rpx;
+    height: 42rpx;
+    line-height: 42rpx; vertical-align: top;
+    font-size: 24rpx;
+}
+.water .listCon>view:nth-of-type(1)>text:nth-of-type(2) {
+    display: inline-block;
+    height: 42rpx;
+    line-height: 42rpx; vertical-align: top;
+    font-size: 30rpx;
+}
+.water .listCon {
+    padding-bottom: 66rpx;
+}
+.water .data {
+    margin-top: 98rpx;
+}
+.water .listCon>view:nth-of-type(2) {
+    margin-top: 78rpx;
+}
+.water .datatit {
+    width: 104rpx; height: 34rpx;
+    line-height: 34rpx;
+}
+
+
+/* 不足、正常、过量 */
+.three {
+    position: relative;
+    width: 320rpx; height: 4rpx;
+}
+
+/* 带数值的进度条 */
+.box {
+    position: relative;
+    width: 478rpx; height: 4rpx;
+    display: flex;
+    align-items: center;
+}
+
+
+/* 健康小麦 */
+.wheat {
+    position: relative;
+    padding-top: 4rpx;
+}
+.wheat .wlist {
+    position: relative;
+    padding-top: 60rpx;
+}
+.wheat .wlist .wtitle {
+    margin-bottom: 34rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+.wheat .wlist .wcontent {
+    position: relative;
+    height: 500rpx; width: 100%;
+    border-radius: 20rpx;
+    box-shadow:0px 20px 60px rgba(147,147,147,0.16);
+}
+.wcontent .people {
+    position: absolute;
+    top: 0; bottom: 0; left: 114rpx;
+    margin: auto;
+    height: 410rpx; width: 118rpx;
+}
+.wcontent .people>image {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 410rpx; width: 118rpx;
+}
+.wcontent .people>image:nth-of-type(2) {
+    height: 360rpx; width: 102rpx;
+}
+.wcontent .recordList {
+    width: 300rpx; height: 190rpx;
+    border-radius: 20rpx;
+    background-color: #F7F8F8;
+}
+.wcontent .recordList>view:nth-of-type(1) {
+    padding-top: 40rpx;
+    height: 34rpx;
+    line-height: 34rpx; text-align: center;
+    font-size: 24rpx; 
+    box-sizing: content-box;
+}
+.wcontent .recordList>view:nth-of-type(2) {
+    padding-top: 10rpx;
+    height: 66rpx;
+    line-height: 66rpx; text-align: center;
+    font-size: 48rpx; 
+    box-sizing: content-box;
+}
+
+
+/* 健康小麦 */
+/* 体态 */
+.posture .wcontent>view:nth-of-type(2) {
+    position: absolute;
+    top: 46rpx; right: 44rpx;
+}
+.posture .wcontent>view:nth-of-type(3) {
+    position: absolute;
+    bottom: 44rpx; right: 44rpx;
+}
+/* 目标 */
+.target .recordList {
+    width: 300rpx; height: 206rpx;
+}
+.target .wcontent>view:nth-of-type(1) {
+    position: absolute;
+    top: 30rpx; left: 30rpx;
+}
+.target .wcontent>view:nth-of-type(2) {
+    position: absolute;
+    top: 30rpx; right: 30rpx;
+}
+.target .wcontent>view:nth-of-type(3) {
+    position: absolute;
+    bottom: 28rpx; left: 30rpx;
+}
+.target .wcontent>view:nth-of-type(4) {
+    position: absolute;
+    bottom: 28rpx; right: 30rpx;
+}
+
+
+/* 分享按钮 */
+.sharebtn {
+    position: fixed;
+    bottom: 0; left: 0;
+    height: 140rpx; width: 100%;
+    display: flex;
+    align-items: center; justify-content: center;
+    z-index: 10;
+}
+.sharebtn view {
+    height: 80rpx; width: 500rpx;
+    line-height: 80rpx; text-align: center;
+    border-radius: 20rpx;
+    font-size: 30rpx; color: #fff;
+}
+
+/* 分享弹窗 */
+.sharePop {
+    position: relative;
+}
+.btnPopCon {
+    position: relative;
+    height: 132rpx; width: 100%;
+}
+.btnPop {
+    position: absolute;
+    top: 0; 
+    width: 330rpx !important; height: 80rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 20rpx;
+}
+.btnPop>image {
+    margin: 0 20rpx 0 76rpx;
+    width: 40rpx; height: 40rpx;
+}
+.btnPop>view {
+    font-size: 30rpx; color: #fff;
+}
+.localPop {
+    right: 30rpx;
+}
+.friPop {
+    left: 30rpx;
+    padding: 0;
+    font-weight: normal;
+}
+.localPop>image {
+    margin: 0 20rpx 0 60rpx;
+    width: 40rpx; height: 36rpx;
+}

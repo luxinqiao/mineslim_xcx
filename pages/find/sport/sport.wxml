@@ -1,0 +1,78 @@
+<!--
+	文件描述：运动知多少
+	创建人：卢信桥
+	创建时间：2020-04-23
+-->
+<wxs module='md_common' src='../../../utils/common.wxs'></wxs>
+<view id='know'>
+	<view id='knowTop'>
+		<text>运动知多少</text>
+		<view>
+			<text class='color_main' data-type='know' bindtap='searchName'>{{selectKnowObj.name}}</text>
+			<image src='/images/pages/mineslim/index/btn-bottom.png' bintap='searchName'></image>
+		</view>
+	</view>
+	<view id='knowContent'>
+		<view class='head'>
+			<text>名称</text>
+			<text>评价</text>
+		</view>
+		<view class='row'>
+			<text>耗能指数</text>
+			<text>{{knowObj.consume}}</text>
+		</view>
+		<view class='row'>
+			<text>运动分类</text>
+			<text>{{knowObj.kind}}</text>
+		</view>
+		<view class='row'>
+			<text>运动描述</text>
+			<text>{{!md_common.isEmpty(knowObj.desc)?knowObj.desc:'--'}}</text>
+		</view>
+		<view class='row'>
+			<text>推荐时长</text>
+			<text>{{knowObj.count}}</text>
+		</view>
+	</view>
+</view>
+
+<view id='compare'>
+	<view id='compareTop'>
+		<text>运动比一比</text>
+	</view>
+	<view id='compareContent'>
+		<view class='head'>
+			<view data-type='compareLeft' bindtap='searchName'>
+				<text class='color_main text_ellipsis'>{{selectCompareLeftObj.name}}</text>
+				<image src='/images/pages/mineslim/index/btn-bottom.png'></image>
+			</view>
+			<view>VS</view>
+			<view data-type='compareRight' bindtap='searchName'>
+				<text class='color_main text_ellipsis'>{{selectCompareRightObj.name}}</text>
+				<image src='/images/pages/mineslim/index/btn-bottom.png'></image>
+			</view>
+		</view>
+		<view class='row'>
+			<text>{{compareLeftObj.consume}}</text>
+			<text>耗能指数</text>
+			<text>{{compareRightObj.consume}}</text>
+		</view>
+		<view class='row'>
+			<text>{{compareLeftObj.kind}}</text>
+			<text>运动分类</text>
+			<text>{{compareRightObj.kind}}</text>
+		</view>
+		<view class='row'>
+			<text>{{!md_common.isEmpty(compareLeftObj.desc)?compareLeftObj.desc:'--'}}</text>
+			<text>运动描述</text>
+			<text>{{!md_common.isEmpty(compareRightObj.desc)?compareRightObj.desc:'--'}}</text>
+		</view>
+		<view class='row'>
+			<text>{{compareLeftObj.count}}</text>
+			<text>推荐时长</text>
+			<text>{{compareRightObj.count}}</text>
+		</view>
+	</view>
+</view>
+
+<mdSearch id='mdSearch' title='运动名称' bind:bindSearch='bindSearch' bind:bindCheckResult='bindCheckResult'></mdSearch>

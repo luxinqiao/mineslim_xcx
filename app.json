@@ -1,0 +1,39 @@
+{
+    "pages": [
+        "pages/sys/start/index",
+        "pages/sys/login/index/index",
+        "pages/sys/login/agent/agent",
+        "pages/mineslim/index/index",
+        "pages/mineslim/history/history",
+        "pages/mineslim/kpi/edit/edit",
+        "pages/mineslim/kpi/hisRecord/hisRecord",
+        "pages/mineslim/health/index/index",
+        "pages/mineslim/health/sport/index/index",
+        "pages/mineslim/health/food/index/index",
+        "pages/mineslim/keepDecode/keepDecode",
+        "pages/find/index/index",
+        "pages/find/food/food",
+        "pages/find/sport/sport",
+        "pages/my/index/index",
+        "pages/my/info/info",
+        "pages/my/report/list/list",
+        "pages/my/report/detail/detail",
+        "pages/my/record/list/list",
+        "pages/my/record/detail/food/detail",
+        "pages/my/record/detail/sport/detail",
+        "pages/my/feedback/feedback"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "usingComponents": {
+        "mdDialog": "components/dialog/dialog",
+        "mdHead": "components/head/head",
+        "mdFoot": "components/foot/foot"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

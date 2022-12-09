@@ -1,0 +1,15 @@
+/**
+    转换文本
+    @param {String} val 旧文本
+    @return {String} 新文本
+*/
+var convertText = function (val) {
+	if (val == '') {
+		return '--'
+	}
+	return val
+}
+
+module.exports = {
+	convertText: convertText
+}

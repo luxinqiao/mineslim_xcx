@@ -1,0 +1,39 @@
+<!--
+ * 文件描述：我的报告
+ * 创建人：赵志银
+ * 创建时间：2020-04-09
+-->
+<wxs module='md_common' src='../../../../utils/common.wxs'></wxs>
+
+<view id='main' class='{{md_common.isEmpty(dataArr)&&isReady?"hasNone":""}}'>
+
+    <view class='none' wx:if='{{md_common.isEmpty(dataArr)&&isReady}}'>
+        <image src='/images/pages/my/report/empty.png'></image>
+        <view>抱歉，暂无信息</view>
+    </view>
+
+    <view wx:if='{{!md_common.isEmpty(dataArr)&&isReady}}'>
+        <view class='list' wx:for='{{dataArr}}' wx:key='index'>
+            <view class='month'>{{item.month}}</view>
+            <view class='content'>
+                <view class='daylist' bindtap='goDetail' data-id='{{ite.id}}' data-date='{{ite.date}}' wx:for='{{item.list}}' wx:for-index='idx' wx:for-item='ite' wx:key='idx'>
+                    <view>
+                        <text>{{ite.name}}</text>
+                        <text class='{{ite.score_level==1?"green":"red"}}'>{{ite.score}}</text>
+                    </view>
+                    <view>
+                        <text class='color_gray'>{{ite.date}}</text>
+                        <image src='/images/pages/my/index/back.png'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class='nomore' wx:if='{{is_last=="1"}}'>-没有更多内容-</view>
+        <view class="loading" wx:if="{{isLoading}}">
+            <text>●</text>
+            <text>●</text>
+            <text>●</text>
+        </view>
+    </view>
+</view>

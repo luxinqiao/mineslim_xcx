@@ -1,0 +1,22 @@
+<!--
+	文件描述：选择组件
+	创建人：卢信桥
+	创建时间：2020-04-09
+-->
+<wxs module='selectWxs' src='select.wxs'></wxs>
+
+<view class='shade' wx:if='{{isShow}}'>
+	<view class='top' bindtap='close'></view>
+	<view class='bottom' animation='{{animationData}}'>
+		<view class='title'>
+			<text bindtap='close'>取消</text>
+			<text>{{title}}</text>
+			<text bindtap='bindComplete'>完成</text>
+		</view>
+		<picker-view class='content' indicator-class='currSelect' mask-class='currSelectMark' value='{{currIndexArr}}' bindchange='changePicker'>
+			<picker-view-column class='list'>
+				<view class='item' wx:for='{{dataList}}'>{{item}}</view>
+			</picker-view-column>
+		</picker-view>
+	</view>
+</view>

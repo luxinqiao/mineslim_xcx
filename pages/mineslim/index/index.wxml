@@ -1,0 +1,143 @@
+<!--
+ * 文件描述：首页
+ * 创建人：赵志银
+ * 创建时间：2020-04-07
+-->
+
+<wxs module='md_common' src='../../../utils/common.wxs'></wxs>
+
+<view wx-if='{{isTop}}'>
+    <mdHead isBack='{{false}}' title='MineSlim' titleStyle='font-size: 48rpx;'></mdHead>
+</view>
+
+<view id='main'>
+<!-- 头部 -->
+    <view class='top'>
+        <image src='/images/pages/mineslim/index/MineSlim.png'></image>
+        <view class='tatol bg_main'>
+            <view>{{!md_common.isEmpty(reportObj.health_score)?(reportObj.health_score+reportObj.health_score_unit):"--"}}</view>
+            <view>健康评分</view>
+            <view class='toplist'>
+                <view class='list'>
+                    <view class='cir'></view>
+                    <view class='tag'>体脂率</view>
+                    <view class='num'>
+                        <text>{{!md_common.isEmpty(reportObj)?(reportObj.body_fat_rate+reportObj.body_fat_rate_unit):"--"}}</text>
+                    </view>
+                </view>
+                <view class='list'>
+                    <view class='cir'></view>
+                    <view class='tag'>体质指数</view>
+                    <view class='num'>
+                        <text>{{!md_common.isEmpty(reportObj)?(reportObj.bmi+reportObj.bmi_unit):"--"}}</text>
+                    </view>
+                </view>
+                <view class='list'>
+                    <view class='cir'></view>
+                    <view class='tag'>腰臀比</view>
+                    <view class='num'>
+                        <text>{{!md_common.isEmpty(reportObj)?(reportObj.whr+reportObj.whr_unit):"--"}}</text>
+                    </view>
+                </view>
+                <view class='list'>
+                    <view class='cir'></view>
+                    <view class='tag'>体重调节</view>
+                    <view class='num'>
+                        <text>{{!md_common.isEmpty(reportObj)?(reportObj.weight+reportObj.weight_unit):"--"}}</text>
+                    </view>
+                </view>
+            </view>
+            <view>合理的运动及营养补充将帮助您更加健康。</view>
+            <image src='/images/pages/mineslim/index/A.png' wx:if='{{reportObj.level=="A"}}'></image>
+            <image src='/images/pages/mineslim/index/B.png' wx:if='{{reportObj.level=="B"}}'></image>
+            <image src='/images/pages/mineslim/index/C.png' wx:if='{{reportObj.level=="C"}}'></image>
+            <image src='/images/pages/mineslim/index/D.png' wx:if='{{reportObj.level=="D"}}'></image>
+        </view>
+    </view>
+
+    <!-- 关键指标 -->
+    <view class='indicator' id='indic'>
+        <view class='title'>
+            <view>
+                <view>关键指标</view>
+                <image src='/images/pages/mineslim/index/ask.png' bindtap='introdIndicators'></image>
+            </view>
+            <view bindtap='goHistory'>
+                <view class='color_main'>历史记录</view>
+                <image src='/images/pages/mineslim/index/btn.png'></image>
+            </view>
+            <view class='time color_gray'>{{targetObj.gmt_create}}</view>
+        </view>
+
+        <view class='indcontent'>
+            <view class='indlist  {{(index+1)%3==0?"rlist":""}}' wx:for='{{targetObj.list}}' wx:key='index'>
+                <view class='text_ellipsis'>
+                    <view>{{!md_common.isEmpty(item.value)?item.value:'--'}}</view>
+                    <view>{{item.unit}}</view>
+                </view>
+                <view>{{item.name}}</view>
+            </view>
+            
+            <view class='indlist add' bindtap='changeIndicators'>
+                <image src='/images/pages/mineslim/index/add.png'></image>
+                <view class='color_gray'>管理您的指标</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 检测解读 -->
+    <view class='inspect'>
+        <view class='title'>检测解读</view>
+        <view>
+            <view class='inspectlist' bindtap='goDecode'>
+                <image src='/images/pages/mineslim/index/trail-running-shoe.png'></image>
+                <view>
+                    <view>深度解码</view>
+                    <view class='color_gray'>报告解读指导</view>
+                </view>
+            </view>
+            <view class='inspectlist' bindtap='goHealth'>
+                <image src='/images/pages/mineslim/index/weight.png'></image>
+                <view>
+                    <view>健身营养</view>
+                    <view class='color_gray'>健康生活小目标</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 健康指数趋势 -->
+    <view class='health'>
+        <view class='left bg_main'></view>
+        <view class='right'>
+            <view class='date'>{{trendObj.date}}</view>
+            <view class='title'>健康指数趋势</view>
+            <view>近七次健康指数趋势图</view>
+            <mdTrendChart id='mdTrendChart' title='趋势图' style='position: absolute; top: 0; right: 20rpx; bottom:0; margin: auto; width: {{canvasW}}rpx; height: {{canvasH}}rpx;' canvasW='{{canvasW}}' canvasH='{{canvasH}}' rate='1' dataList='{{trendObj.list}}'></mdTrendChart>
+        </view>
+    </view>
+</view>
+
+<mdFoot currActive='home'></mdFoot>
+
+<mdPopup id='mdPopup' isRound='true'>
+    <view class='indibPop'>
+        <view class='title'>关键指标</view>
+        <view>
+            <view class='list'><text>健康评分：</text><text class='color_gray'>反应机体综合健康状态；</text></view>
+            <view class='list'><text>基础代谢：</text><text class='color_gray'>反应人体最基本需求的能量需要量，代谢低下是肥胖的危险因素；</text></view>
+            <view class='list'><text>体水分：</text><text class='color_gray'>水是人体含量最大的物质，占人体总重量50%以上；</text></view>
+            <view class='list'><text>腰臀比：</text><text class='color_gray'>腰围和臀围的比值，参考范围男性：0.75~0.85，女性0.7~0.8；</text></view>
+            <view class='list'><text>体型判定：</text><text class='color_gray'>根据身体质量指数和体脂率综合评价体格形态；</text></view>
+            <view class='list'><text>无机盐：</text><text class='color_gray'>主要存在于骨骼牙齿中，占人体中重量4%~6%；</text></view>
+            <view class='list'><text>体重：</text><text class='color_gray'>是身体健康评价最直观的指标，不足和过量具有健康风险；</text></view>
+            <view class='list'><text>肌肉量：</text><text class='color_gray'>正常健康人群的肌肉量含量男性40%，女性30%，是影响体力活动重要的影响因素；</text></view>
+            <view class='list'><text>蛋白质：</text><text class='color_gray'>蛋白质是生命的基础，占人体总重量16%~20%；</text></view>
+            <view class='list'><text>体脂率：</text><text class='color_gray'>人体脂肪含量占总体重的比例，女性推荐值为23%，男性推荐为15%；</text></view>
+            <view class='list'><text>BMI：</text><text class='color_gray'>身体质量指数，是体重（kg）与身高的平方比值（M²）,反映身体整体状态。</text></view>
+        </view>
+    </view>
+</mdPopup>
+
+
+<mdDialog id="mdDialog"></mdDialog>

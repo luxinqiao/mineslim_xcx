@@ -1,0 +1,26 @@
+.head {
+	position: fixed; z-index: 99;
+	top: 0; left: 0; right: 0;
+	height: 128rpx;
+	background-color: #fff;
+}
+
+.back {
+	position: absolute; z-index: 2;
+	top: 40rpx; left: 0;
+	width: 100rpx; height: 88rpx;
+}
+.back>image {
+	position: absolute;
+	top: 24rpx; left: 38rpx;
+	width: 22rpx; height: 40rpx;
+}
+
+.title {
+	position: absolute; z-index: 1;
+	top: 40rpx; left: 0; right: 0;
+	height: 88rpx;
+	text-align: center; line-height: 88rpx;
+	font-size: 36rpx; font-weight: bold;
+	color: #000;
+}

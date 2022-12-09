@@ -1,0 +1,83 @@
+page {
+    background-color: #fff;
+}
+#main {
+    position: relative;
+    padding: 0 30rpx 130rpx 30rpx;
+}
+
+.content {
+    position: relative;
+    padding-top: 60rpx;
+}
+
+
+.content>textarea {
+    height: 380rpx; width: 100%;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #000;
+}
+
+.imglist {
+    margin-top: 20rpx;
+    height: 160rpx;
+}
+
+.imglist>view {
+    position: relative;
+    display: inline-block;
+    margin-right: 30rpx;
+    width: 160rpx; height: 160rpx;
+}
+
+.addImg {
+    position: relative;
+    width: 150rpx; height: 150rpx;
+    background-color: #F7F8F8;
+    border-radius: 20rpx;
+}
+
+.addImg>image {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    margin: auto;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.addImg>view {
+    position: absolute;
+    bottom: 20rpx;
+    width: 100%;
+    font-size: 24rpx;
+    text-align: center;
+    color: #b8b8b8;
+}
+
+.img>image:nth-child(1) {
+    position: absolute;
+    top: 0; left: 0;
+    width: 160rpx; height: 160rpx;
+    border-radius: 20rpx;
+}
+
+.img>image:nth-child(2) {
+    position: absolute;
+    top: -16rpx; left: -16rpx;
+    width: 40rpx; height: 40rpx;
+}
+
+.btn {
+    position: fixed;
+    bottom: 40rpx; left: 0; right: 0;
+    margin: auto;
+    width: 500rpx; height: 80rpx;
+    line-height: 80rpx; text-align: center;
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 20rpx;
+}
+.btnbg {
+    background-color: rgba(90,90,209,0.4);
+}

@@ -1,0 +1,18 @@
+<!--
+ * 文件描述：关键指标编辑
+ * 创建人：赵志银
+ * 创建时间：2020-04-09
+-->
+<view id='main'>
+    <view class='title'>生活小目标：稳住我的体重！</view>
+    <view class='list' bindtap='goSport'>
+        <image src='/images/pages/mineslim/health/index/sports.png' mode='widthFix'></image>
+        <view><text>S</text>PORTS</view>
+        <view>动起来，更精彩~</view>
+    </view>
+    <view class='list' bindtap='goFood'>
+        <image src='/images/pages/mineslim/health/index/food.png' mode='widthFix'></image>
+        <view><text>F</text>OOD</view>
+        <view>吃起来，要个性~</view>
+    </view>
+</view>

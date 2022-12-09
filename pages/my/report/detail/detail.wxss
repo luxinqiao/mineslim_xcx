@@ -1,0 +1,364 @@
+@import "./icon.wxss";
+
+page {
+    background-color: #fff;
+}
+#main {
+    position: relative;
+    padding: 0 0 130rpx 0;
+}
+
+/* 不足、正常、过量 */
+.three {
+    position: relative;
+    width: 320rpx; height: 4rpx;
+    background-color:#DCDDDD;
+}
+
+/* 带数值的进度条 */
+.box {
+    position: relative;
+    width: 478rpx; height: 4rpx;
+    display: flex;
+    align-items: center;
+}
+
+/* 人体 */
+.people {
+    position: relative;
+    width: 142rpx; height: 500rpx;
+}
+.people .bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 142rpx; height: 500rpx;
+}
+.people .lhand {
+    position: absolute;
+    top: 86rpx; left: 2rpx;
+    width: 34rpx; height: 214rpx;
+}
+.people .rhand {
+    position: absolute;
+    top: 86rpx; right: 2rpx;
+    width: 32rpx; height: 218rpx;
+}
+.people .mid {
+    position: absolute;
+    top: 76rpx; left: 30rpx;
+    width: 88rpx; height: 190rpx;
+    z-index: 2;
+}
+.people .lleg {
+    position: absolute;
+    bottom: 0; left: 28rpx;
+    width: 46rpx; height: 268rpx;
+}
+.people .rleg {
+    position: absolute;
+    bottom: 0; right: 24rpx;
+    width: 48rpx; height: 264rpx;
+}
+
+.content {
+    position: relative;
+    padding: 30rpx 30rpx 0 30rpx;
+}
+.list {
+    width: 100%;
+    padding: 30rpx;
+    border-radius: 20rpx;
+}
+.list .title {
+    padding-bottom: 40rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; font-weight: bold;
+    box-sizing: content-box;
+}
+.data {
+    position: relative;
+    height: 34rpx;
+    display: flex;
+    align-items: center;
+}
+.datatit {
+    height: 34rpx; line-height: 34rpx;
+    font-size: 24rpx;
+}
+/* 健康总览 */
+.total {
+    margin-bottom: 30rpx; padding-bottom: 66rpx;
+}
+.total>view:nth-of-type(2) {
+    display: flex;
+}
+.total>view:nth-of-type(2)>view {
+    text-align: center;
+}
+.total>view:nth-of-type(2)>view>view:nth-of-type(1) {
+    font-size: 20rpx;
+}
+.total>view:nth-of-type(2)>view>view:nth-of-type(2) {
+    margin-top: 10rpx;
+    font-size: 30rpx; font-weight: bold;
+}
+.total>view:nth-of-type(2)>view:nth-of-type(1), .total>view:nth-of-type(2)>view:nth-of-type(2) {
+    margin-right: 100rpx;
+}
+.total>view:nth-of-type(3) {
+    margin-top: 76rpx;
+}
+.total>view:nth-of-type(4) {
+    margin-top: 98rpx;
+}
+.total .datatit {
+    width: 104rpx;
+}
+
+/* 体成分分析 */ 
+.body {
+    position: relative;
+    padding-bottom: 60rpx;
+    z-index: 2;
+}
+.body .datatit {
+    width: 152rpx;
+}
+.body .data{
+    margin-top: 98rpx;
+}
+.body>view:nth-of-type(2) {
+    margin-top: 36rpx;
+}
+
+/* 健康解码 */
+.health {
+    margin: 60rpx 0 30rpx 0;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; font-weight: bold;
+}
+
+/* 健康解码 */
+.muscle {
+    position: relative;
+    padding-bottom: 80rpx;
+}
+.muscle .title {
+    display: flex;
+    align-items: center;
+    height: 50rpx;
+    padding-bottom: 78rpx;
+}
+.muscle .title image{
+    margin-right: 20rpx;
+    width: 50rpx; height: 50rpx;
+}
+.muscle .title view{
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+.muscle .datatit {
+    width: 104rpx;
+}
+.muscle .data {
+    margin-top: 98rpx;
+}
+.muscle .listCon>view:nth-of-type(1) {
+    margin-top: 0;
+}
+.muscle .people {
+    position: absolute;
+    right: 42rpx; bottom: 118rpx
+}
+
+/* 体脂解码 */
+.fat {
+    margin-top: 30rpx;
+}
+.fat .datatit {
+    width: 104rpx;
+}
+.fat .listCon>view:nth-of-type(2) {
+    margin-top: 118rpx;
+}
+.fat .people {
+    bottom: 104rpx;
+}
+
+/* 健康目标 */
+.tagCon {
+    position: relative;
+}
+.tagList {
+    position: relative;
+    width: 330rpx; height: 260rpx;
+    border-radius: 20rpx;
+}
+.tagList>image {
+    position: absolute;
+    top: 84rpx; left: 30rpx;
+    width: 50rpx; height: 50rpx;
+}
+.tagList>view {
+    position: absolute;
+    top: 84rpx; left: 100rpx;
+    width: 230rpx; 
+    white-space: nowrap; text-overflow: ellipsis;
+}
+.tagList>view>view:nth-of-type(1) {
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.tagList>view>view:nth-of-type(1)>text:nth-of-type(1) {
+    margin-right: 8rpx;
+    font-size: 20rpx; font-weight: bold;
+}
+.tagList>view>view:nth-of-type(1)>text:nth-of-type(2) {
+    font-size: 30rpx; 
+}
+.tagList>view>view:nth-of-type(2) {
+    margin-top: 10rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+}
+.tagCon>view:nth-of-type(1) {
+    margin-bottom: 30rpx;
+}
+.tagCon>view:nth-of-type(2) {
+    position: absolute;
+    top: 0; right: 0;
+} 
+.tagCon>view:nth-of-type(4) {
+    position: absolute;
+    bottom: 0; right: 0;
+}
+/* 运动建议 */
+.advice {
+    margin-bottom: 30rpx;
+}
+.adlisthot {
+    padding: 56rpx 30rpx; margin-bottom: 30rpx;
+    background-color: #F7F8F8;
+    border-radius: 20rpx;
+}
+.adlisthot .name {
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; font-weight: bold;
+}
+.adlisthot>view:nth-of-type(2) {
+    margin-top: 14rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+}
+.adlist {
+    position: relative;
+    margin-bottom: 30rpx;
+    width: 100%; height: 200rpx;
+    background-color: #F7F8F8;
+    border-radius: 20rpx;
+}
+.adlist .icon {
+    position: absolute;
+    top: 56rpx; left: 30rpx;
+}
+.adlist .name {
+    position: absolute;
+    top: 60rpx; left: 102rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; font-weight: bold;
+}
+.adlist .time {
+    position: absolute;
+    top: 116rpx; left: 102rpx;
+    line-height: 28rpx;
+    font-size: 20rpx; 
+}
+.advice .tip {
+    margin-top: 10rpx;
+}
+.advice .tip>view:nth-of-type(1) {
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 24rpx;
+}
+.advice .tip>view:nth-of-type(2) {
+    margin: 10rpx 0 12rpx 0;
+    line-height: 34rpx;
+    font-size: 24rpx;
+}
+/* 饮食建议 */
+.fadlist {
+    position: relative;
+    margin-bottom: 30rpx;
+    height: 100rpx; width: 100%;
+    background-color: #F7F8F8;
+    border-radius: 20rpx;
+}
+.fadlist>image {
+    display: inline-block;
+    padding: 26rpx 0 0 30rpx;
+    width: 50rpx; height: 50rpx;
+    box-sizing: content-box;
+}
+.fadlist>view {
+    display: inline-block;
+    padding: 32rpx 0 0 22rpx;
+    height: 42rpx;
+    vertical-align: top;
+    font-size: 30rpx;
+    box-sizing: content-box;
+}
+.vitamin {
+    position: relative;
+    margin-bottom: 30rpx; 
+    padding: 0 10rpx;
+    height: 150rpx; width: 100%;
+    background-color: #F7F8F8;
+    border-radius: 20rpx;
+    display: flex;
+    align-items: center; justify-content: space-between;
+}
+.vitamin>view {
+    text-align: center;
+}
+.vitamin>view>view {
+    line-height: 50rpx;
+    font-size: 24rpx;
+}
+
+/* 总结 */
+.summary {
+    position: relative;
+    padding: 0 30rpx
+}
+.summary .left {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 20rpx;
+    border-radius: 0 20rpx 20rpx 0;
+}
+.summary .tAdvice {
+    margin-left: 20rpx; padding: 30rpx;
+    border-radius: 20rpx;
+}
+.summary .tAdvice .time {
+    margin-bottom: 22rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+}
+.summary .tAdvice .title {
+    margin-bottom: 36rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; font-weight: bold;
+}
+.summary .tAdvice .adv {
+    margin-bottom: 42rpx;
+    line-height: 46rpx;
+    font-size: 24rpx; color: #666;
+}

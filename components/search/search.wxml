@@ -1,0 +1,21 @@
+<!--
+	文件描述：搜索组件
+	创建人：卢信桥
+	创建时间：2020-04-09
+-->
+<view class='shade' wx:if='{{isShow}}' catchtouchmove='return'>
+	<view class='top' bindtap='close'></view>
+	<view class='bottom' bindchange='changePicker' animation='{{animationData}}'>
+		<view class='title'>{{title}}</view>
+		<view class='search'>
+			<input type='text' placeholder='请输入关键词' value='{{keyword}}' bindinput='inputKeyword' maxlength='-1'></input>
+			<text class='color_main' bindtap='search'>搜索</text>
+		</view>
+		<view class='mark' wx:if='{{isDataLoad && dataArr.length>0}}'></view>
+		<scroll-view class='content' scroll-y wx:if='{{isDataLoad && dataArr.length>0}}' bindscrolltolower='scrolltolower'>
+			<view class='contentItem' wx:for='{{dataArr}}' data-index='{{index}}' bindtap='checkResult'>{{item.name}}</view>
+		</scroll-view>
+		<view class='noData' wx:if='{{isDataLoad && dataArr.length==0}}'>无符合条件的记录</view>
+	</view>
+</view>
+<mdDialog id='mdDialog'></mdDialog>

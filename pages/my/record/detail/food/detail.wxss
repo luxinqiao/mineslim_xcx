@@ -1,0 +1,223 @@
+page {
+    background-color: #fff;
+}
+#main {
+    position: relative;
+    padding: 0 30rpx 180rpx 30rpx;
+}
+::-webkit-scrollbar{
+    width: 0 !important;
+    height: 0 !important;
+    color: transparent !important;
+}
+
+/* 方案 */
+.plan {
+    position: relative;
+    padding-top: 60rpx;
+}
+.plan .title {
+    position: relative;
+    display: flex;
+    padding-bottom: 34rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; color: #000; font-weight: bold;
+    box-sizing: content-box;
+}
+.title image {
+    margin-left: 30rpx;
+    width: 42rpx; height: 42rpx;
+}
+.plan .title .time {
+    position: absolute;
+    right: 0;
+    font-size: 30rpx; font-weight: normal;
+}
+.plancon {
+    position: relative;
+    padding: 0 30rpx 1rpx 30rpx;
+    width: 100%; height: auto;
+    border-radius: 20rpx;
+    box-shadow:0px 20px 60px rgba(147,147,147,0.16);
+}
+.plancontit {
+    height: 94rpx; 
+    line-height: 94rpx; text-align: center;
+}
+.plancontit>text {
+    height: 94rpx; 
+    line-height: 94rpx;
+    font-size: 24rpx;
+}
+.plancontit>text:nth-of-type(1) {
+    float: left;
+    margin-left: 20rpx;
+}
+.plancontit>text:nth-of-type(2) {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+.plancontit>text:last-of-type {
+    float: right;
+    margin-right: 20rpx;
+}
+.planconlist {
+    position: relative;
+    margin-bottom: 30rpx;
+    width: 100%; height: 80rpx;
+    line-height: 80rpx; text-align: center;
+    background-color: #F7F8F8;
+    border-radius: 20rpx;
+}
+.planconlist>text {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 24rpx;
+}
+.planconlist>text:nth-of-type(1) {
+    float: left;
+    margin-left: 20rpx;
+    max-width: 33%;
+    font-size: 30rpx; font-weight: bold; text-align: left;
+}
+.planconlist>text:nth-of-type(2) {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: auto;
+    max-width: 33%;
+}
+.planconlist>text:nth-of-type(3) {
+    float: right;
+    margin-right: 20rpx;
+}
+/* 营养评价 */
+.evaluate .plancon {
+    padding-top: 30rpx;
+}
+.evconlist {
+    position: relative;
+    margin-bottom: 30rpx; padding: 0 20rpx;
+    width: 100%; height: 80rpx;
+    line-height: 80rpx; text-align: center;
+    background-color: #F7F8F8;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.evconlist text {
+    display: inline-block;
+    font-size: 24rpx;
+    white-space: nowrap;
+}
+.evconlist text:nth-of-type(1) {
+    font-size: 30rpx; font-weight: bold; text-align: left;
+}
+.evconlist text:last-of-type {
+    text-align: right;
+}
+
+/* 关键营养素提示 */
+.tip .plancon {
+    position: relative;
+    padding: 30rpx;
+}
+.tip .plancon>view {
+    position: relative;
+    width: 300rpx; height: 80rpx;
+    line-height: 80rpx;
+    background-color: #F7F8F8;
+    border-radius: 20rpx;
+}
+.tip .plancon>view>text:nth-of-type(1) {
+    float: left;
+    margin-left: 20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx; font-weight: bold;
+}
+.tip .plancon>view>text:nth-of-type(2) {
+    float: right;
+    margin-right: 20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 24rpx;
+}
+.tip .plancon>view:nth-of-type(1) {
+    margin-bottom: 30rpx;
+}
+.tip .plancon>view:nth-of-type(2) {
+    position: absolute;
+    top: 30rpx; right: 30rpx;
+}
+.tip .plancon>view:nth-of-type(4) {
+    position: absolute;
+    bottom: 30rpx; right: 30rpx;
+}
+
+/* 按钮 */
+.btn {
+    position: fixed;
+    bottom: 40rpx; left: 0; right: 0;
+    margin: auto;
+    width: 500rpx; height: 80rpx;
+    line-height: 80rpx; text-align: center;
+    border-radius: 20rpx;
+    font-size: 30rpx; color: #fff;
+}
+
+/* 作用 */
+.indibPop {
+    padding: 0 30rpx 48rpx 30rpx;
+    border-radius: 40rpx 40rpx 0 0;
+}
+.indibPop .indiCon {
+    height: 600rpx;
+}
+.indibPop .title {
+    padding: 60rpx 0 30rpx 0;
+    font-size: 36rpx;
+    text-align: center; font-weight: bold;
+}
+.indibPop .list {
+    line-height: 48rpx;
+}
+.indibPop .list>text {
+    font-size: 24rpx;
+}
+
+/* 分享弹窗 */
+.sharePop {
+    position: relative;
+}
+.btnPopCon {
+    position: relative;
+    height: 132rpx; width: 100%;
+}
+.btnPop {
+    position: absolute;
+    top: 0; 
+    width: 330rpx !important; height: 80rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 20rpx;
+}
+.btnPop>image {
+    margin: 0 20rpx 0 76rpx;
+    width: 40rpx; height: 40rpx;
+}
+.btnPop>view {
+    font-size: 30rpx; color: #fff;
+}
+.localPop {
+    right: 30rpx;
+}
+.friPop {
+    left: 30rpx;
+    padding: 0;
+    font-weight: normal;
+}
+.localPop>image {
+    margin: 0 20rpx 0 60rpx;
+    width: 40rpx; height: 36rpx;
+}

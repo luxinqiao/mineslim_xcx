@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "关键指标编辑",
+	"usingComponents": {
+		"mdSelect": "/components/select/select"
+	}
+}

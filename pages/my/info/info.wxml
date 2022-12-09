@@ -1,0 +1,77 @@
+<!--
+ * 文件描述：我的信息
+ * 创建人：赵志银
+ * 创建时间：2020-04-08
+-->
+
+<wxs module='md_dict' src='../../../utils/dict.wxs'></wxs>
+<wxs module='md_common' src='../../../utils/common.wxs'></wxs>
+
+<view id='main'>
+    <view class='content'>
+        <view class='list img' bindtap='changeImg' wx:if='{{isReady}}'>
+            <text class='title'>更换头像</text>
+            <image src='{{!md_common.isEmpty(dataObj.avatar)?dataObj.avatar:"/images/pages/my/index/people.png"}}' mode='aspectFill'></image>
+            <image src='/images/pages/my/index/back.png' class='btn'></image>
+        </view>
+        <view class='list'>
+            <text class='title'>昵称</text>
+            <input type='text' value='{{dataObj.name}}' bindinput='changeNickName' maxlength='10' placeholder='未设置' disabled='{{isSave}}'></input>
+            <image src='/images/pages/my/index/back.png' class='btn'></image>
+        </view>
+        <view class='list'>
+            <text class='title'>手机号</text>
+            <text>{{dataObj.phone}}</text>
+        </view>
+    </view>
+
+    <view class='content'>
+
+        <view class='list' wx:if='{{!md_common.isEmpty(dataObj.sex) && dataObj.sex!="未设置"}}'>
+            <text class='title'>性别</text>
+            <text>{{dataObj.sex}}</text>
+        </view>
+
+        <view class='list' wx:if='{{!md_common.isEmpty(dataObj.age) && dataObj.age!="未设置"}}'>
+            <text class='title'>年龄</text>
+            <text>{{dataObj.age+'岁'}}</text>
+        </view>
+
+        <view class='list' wx:if='{{!md_common.isEmpty(dataObj.height) && dataObj.height!="未设置"}}'>
+            <text class='title'>身高</text>
+            <text>{{dataObj.height}}</text>
+        </view>
+
+        <view class='list' wx:if='{{!md_common.isEmpty(dataObj.weight) && dataObj.weight!="未设置"}}'>
+            <text class='title'>体重</text>
+            <text>{{dataObj.weight}}</text>
+        </view>
+
+
+        <picker mode='multiSelector' bindchange='zoneConfirm' bindcolumnchange='zoneChange' value='{{zoneObj.indexArr}}' range='{{zoneObj.nameDataArr}}' disabled='{{isSave}}'>
+            <view class='position interval list'>
+                <text class='title'>所在地区</text>
+                <text class='text_ellipsis address  {{(!md_common.isEmpty(dataObj.address) && dataObj.address!="未设置")?"":"hasno"}}'>{{dataObj.address}}</text>
+                <image src='/images/pages/my/index/back.png' class='btn'></image>
+            </view>
+        </picker>
+
+    </view>
+
+    <!-- 简介 -->
+    <view class='content'>
+        <view class='list'>
+            <text class='title'>简介</text>
+        </view>
+        <view class='msg'>
+            <textarea maxlength='140' auto-height value='{{dataObj.introduce}}' bindinput='changeSign' disabled='{{isSave}}'></textarea>
+            <text class='color_gray'>{{dataObj.introduce.length>140?"140":dataObj.introduce.length}}/140</text>
+        </view>
+    </view>
+
+    <cover-view class='savebtn'>
+        <cover-view class='bg_main' bindtap='save'>保存</cover-view>
+    </cover-view>
+</view>
+
+<mdDialog id="mdDialog"></mdDialog>

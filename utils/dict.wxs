@@ -1,0 +1,32 @@
+/**
+    文件描述：字典工具类
+    创建人：卢信桥
+    创建时间：2020-04-07
+ */
+/** 流产次数 **/
+var abortionCount = {
+	NOFILED: '-1', //未填写
+	NONABORTION: '0', //0次
+	ONCEABORTION: '1', //1次
+	TWICEABORTION: '2', //2次
+	MULTIPABORTION: '3', //3次及以上
+}
+var getAbortionCount = function (val) {
+	if (val == abortionCount.NOFILED) {
+		return ''
+	} else if (val == abortionCount.NONABORTION) {
+		return '0次'
+	} else if (val == abortionCount.ONCEABORTION) {
+		return '1次'
+	} else if (val == abortionCount.TWICEABORTION) {
+		return '2次'
+	} else if (val == abortionCount.MULTIPABORTION) {
+		return '3次及以上'
+	}
+	return val
+}
+
+module.exports = {
+	abortionCount: abortionCount,
+	getAbortionCount: getAbortionCount
+}

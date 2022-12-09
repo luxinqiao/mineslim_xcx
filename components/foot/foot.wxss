@@ -1,0 +1,42 @@
+.foot {
+	position: fixed; z-index: 99;
+	left: 30rpx; bottom: 60rpx;
+	width: 690rpx; height: 120rpx;
+	background-color: #fff;
+	border-radius: 400rpx;
+	box-shadow: 0rpx 20rpx 40rpx rgba(147,147,147,0.16);
+}
+
+.menuItem {
+	position: absolute;
+	width: 120rpx; height: 120rpx;
+}
+.home {
+	left: 40rpx; top: 0;
+}
+.find {
+	left: 0; right: 0; top: 0;
+	margin: auto;
+}
+.my {
+	right: 40rpx; top: 0;
+	margin: auto;
+}
+.menuItem>image {
+	position: absolute;
+	left: 0; top: 30rpx; right: 0;
+	margin: auto;
+	width: 40rpx; height: 40rpx;
+}
+.menuItem>text {
+	position: absolute;
+	left: 0; right: 0; bottom: 22rpx;
+	width: 100%; height: 28rpx;
+	text-align: center; line-height: 28rpx;
+	color: #d3d3d4;
+	font-weight: bold; font-size: 20rpx;
+}
+
+.color_main {
+	color: #5A5AD1 !important;
+}

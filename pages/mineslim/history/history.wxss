@@ -1,0 +1,99 @@
+page {
+    background-color: #F7F8F8;
+}
+#main {
+    position: relative;
+    padding: 0 0 130rpx 0;
+}
+
+/* tab */
+.tab {
+    position: fixed;
+    top: 0; left: 0;
+    height: 88rpx; width: 100%;
+    line-height: 88rpx;
+    z-index: 1;
+    background-color: #fff;
+}
+.tab>view:first-of-type {
+    float: left;
+    position: relative;
+    width: 33%;
+    text-align: center;
+}
+.tab>view:nth-of-type(2) {
+    display: inline-block;
+    position: relative;
+    width: 33%;
+    text-align: center;
+}
+.tab>view:nth-of-type(3) {
+    float: right;
+    position: relative;
+    width: 33%;
+    text-align: center;
+}
+.tablist>view:first-of-type {
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+.tablist.act>view:last-child {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 4rpx; width: 50rpx;
+    border-radius: 2rpx;
+}
+
+/* 内容 */
+.content {
+    position: relative;
+    padding-top: 88rpx;
+}
+.conlist {
+    position: relative;
+}
+.conlist .list {
+    position: relative;
+    padding: 30rpx; margin-bottom: 30rpx;
+    background-color: #fff;
+}
+.conlist>view:nth-of-type(1) {
+    padding-top: 58rpx;
+}
+.conlist .list .style {
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+
+/* 建议 */
+.advice {
+    position: relative;
+    margin-top: 60rpx;
+}
+.advice .title {
+    margin-bottom: 20rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx;
+}
+.advice .adv {
+    line-height: 36rpx;
+    font-size: 24rpx; color: #666;
+} 
+.conlist>.advice{
+    padding: 0 30rpx
+}
+.keyAdvice {
+    position: relative;
+    padding: 0 30rpx
+}
+.keyAdvice .left {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 20rpx;
+    border-radius: 0 20rpx 20rpx 0;
+}
+.keyAdvice .advice {
+    margin-left: 20rpx;
+}

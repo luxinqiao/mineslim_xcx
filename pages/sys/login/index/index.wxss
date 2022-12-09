@@ -1,0 +1,118 @@
+#heart {
+	position: absolute;
+	top: 172rpx; left: 184rpx;
+	width: 26rpx; height: 26rpx;
+}
+#title {
+	position: absolute;
+	top: 172rpx; left: 30rpx;
+	height: 84rpx;
+	line-height: 84rpx;
+	font-weight: bold; font-size: 60rpx;
+	color: #333;
+}
+#subTitle {
+	position: absolute;
+	top: 278rpx; left: 30rpx;
+	height: 44rpx;
+	line-height: 44rpx;
+	font-size: 36rpx;
+	color: #999;
+}
+
+#phone {
+	position: absolute;
+	top: 458rpx; left: 30rpx;
+	width: 690rpx; height: 74rpx;
+	border-bottom: 2rpx solid #d3d3d3;
+}
+#phone.focus {
+	border-bottom: 4rpx solid #5a5ad1;
+}
+#phone>image {
+	position: absolute;
+	left: 0; top: 0;
+	width: 44rpx; height: 44rpx;
+}
+#phone>input {
+	position: absolute;
+	left: 74rpx; top: 0;
+	width: 600rpx; height: 44rpx;
+	line-height: 44rpx;
+	font-size: 30rpx;
+}
+
+#code {
+	position: absolute;
+	top: 592rpx; left: 30rpx;
+	width: 690rpx; height: 74rpx;
+	border-bottom: 2rpx solid #d3d3d3;
+}
+#code.focus {
+	border-bottom: 4rpx solid #5a5ad1;
+}
+#code>image {
+	position: absolute;
+	left: 0; top: 0;
+	width: 44rpx; height: 44rpx;
+}
+#code>input {
+	position: absolute;
+	left: 74rpx; top: 0;
+	width: 450rpx; height: 44rpx;
+	line-height: 44rpx;
+	font-size: 30rpx;
+}
+#code>text {
+	position: absolute;
+	right: 0; top: 4rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	font-size: 30rpx; font-weight: bold;
+}
+
+#agent {
+	position: absolute;
+	top: 696rpx; left: 30rpx;
+	width: 690rpx; height: 74rpx;
+}
+#agent>image {
+	position: absolute;
+	top: 6rpx; left: 0;
+	width: 30rpx; height: 30rpx;
+}
+#agent>view {
+	position: absolute;
+	top: 0; left: 60rpx;
+	height: 36rpx;
+}
+#agent>view>text:nth-child(1) {
+	height: 36rpx;
+	line-height: 36rpx;
+	font-size: 30rpx;
+	color: #666;
+}
+#agent>view>text:nth-child(2) {
+	height: 36rpx;
+	line-height: 36rpx;
+	font-size: 30rpx;
+}
+
+#button {
+	position: absolute;
+	top: 858rpx; left: 30rpx;
+	width: 690rpx; height: 100rpx;
+	text-align: center; line-height: 100rpx;
+	border-radius: 20rpx;
+	font-size: 36rpx;
+	color: #fff;
+}
+
+#version {
+	position: absolute;
+	bottom: 30rpx; right: 30rpx;
+	height: 26rpx;
+	line-height: 26rpx;
+	font-size: 18rpx;
+	color: #999;
+}

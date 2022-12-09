@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+		"mdPopup": "/components/popup/popup",
+		"mdTrendChart": "/components/trendChart/trendChart"
+	},
+	"navigationStyle": "custom"
+}

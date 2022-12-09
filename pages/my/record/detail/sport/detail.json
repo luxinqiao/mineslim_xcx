@@ -1,0 +1,7 @@
+{
+	"navigationBarTitleText": "运动记录",
+	"usingComponents": {
+        "mdPopup": "/components/popup/popup",
+        "mdPoster": "/components/poster/poster"
+    }
+}

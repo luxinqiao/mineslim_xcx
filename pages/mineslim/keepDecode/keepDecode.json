@@ -1,0 +1,8 @@
+{
+	"navigationBarTitleText": "深度解码",
+	"usingComponents": {
+		"mdIndexChart": "/components/indexChart/indexChart",
+		"mdPopup": "/components/popup/popup",
+		"mdPoster": "/components/poster/poster"
+	}
+}

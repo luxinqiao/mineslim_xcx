@@ -1,0 +1,101 @@
+<!--
+	文件描述：营养知多少
+	创建人：卢信桥
+	创建时间：2020-04-23
+ -->
+ <wxs module='wxs' src='food.wxs'></wxs>
+
+<view id='know'>
+	<view id='knowTop'>
+		<text>营养知多少</text>
+		<view bindtap='searchName' data-type='know'>
+			<text class='color_main'>{{selectKnowObj.name}}</text>
+			<image src='/images/pages/mineslim/index/btn-bottom.png'></image>
+		</view>
+	</view>
+	<view id='knowContent'>
+		<view class='head'>
+			<text>名称</text>
+			<text>含量/100g</text>
+		</view>
+		<view class='row'>
+			<text>总能量</text>
+			<text>{{wxs.convertText(knowObj.energy)}}</text>
+		</view>
+		<view class='row'>
+			<text>钙</text>
+			<text>{{wxs.convertText(knowObj.ca)}}</text>
+		</view>
+		<view class='row'>
+			<text>铁</text>
+			<text>{{wxs.convertText(knowObj.fe)}}</text>
+		</view>
+		<view class='row'>
+			<text>VA</text>
+			<text>{{wxs.convertText(knowObj.va)}}</text>
+		</view>
+		<view class='row'>
+			<text>VC</text>
+			<text>{{wxs.convertText(knowObj.vc)}}</text>
+		</view>
+		<view class='row'>
+			<text>升糖指数</text>
+			<text>{{wxs.convertText(knowObj.gi)}}</text>
+		</view>
+		<view class='row intro'>
+			<text>食用简介</text>
+			<text class='text_ellipsis2'>{{wxs.convertText(knowObj.edible_intro)}}</text>
+		</view>
+	</view>
+</view>
+
+<view id='compare'>
+	<view id='compareTop'>
+		<text>营养比一比</text>
+	</view>
+	<view id='compareContent'>
+		<view class='head'>
+			<view data-type='compareLeft' bindtap='searchName'>
+				<text class='color_main text_ellipsis'>{{selectCompareLeftObj.name}}</text>
+				<image src='/images/pages/mineslim/index/btn-bottom.png'></image>
+			</view>
+			<view>含量/100g</view>
+			<view data-type='compareRight' bindtap='searchName'>
+				<text class='color_main text_ellipsis'>{{selectCompareRightObj.name}}</text>
+				<image src='/images/pages/mineslim/index/btn-bottom.png'></image>
+			</view>
+		</view>
+		<view class='row'>
+			<text>{{wxs.convertText(compareLeftObj.energy)}}</text>
+			<text>总能量</text>
+			<text>{{wxs.convertText(compareRightObj.energy)}}</text>
+		</view>
+		<view class='row'>
+			<text>{{wxs.convertText(compareLeftObj.ca)}}</text>
+			<text>钙</text>
+			<text>{{wxs.convertText(compareRightObj.ca)}}</text>
+		</view>
+		<view class='row'>
+			<text>{{wxs.convertText(compareLeftObj.fe)}}</text>
+			<text>铁</text>
+			<text>{{wxs.convertText(compareRightObj.fe)}}</text>
+		</view>
+		<view class='row'>
+			<text>{{wxs.convertText(compareLeftObj.va)}}</text>
+			<text>VA</text>
+			<text>{{wxs.convertText(compareRightObj.va)}}</text>
+		</view>
+		<view class='row'>
+			<text>{{wxs.convertText(compareLeftObj.vc)}}</text>
+			<text>VC</text>
+			<text>{{wxs.convertText(compareRightObj.vc)}}</text>
+		</view>
+		<view class='row'>
+			<text>{{wxs.convertText(compareLeftObj.gi)}}</text>
+			<text>升糖指数</text>
+			<text>{{wxs.convertText(compareRightObj.gi)}}</text>
+		</view>
+	</view>
+</view>
+
+<mdSearch id='mdSearch' title='食物名称' bind:bindSearch='bindSearch' bind:bindCheckResult='bindCheckResult'></mdSearch>

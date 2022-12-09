@@ -1,0 +1,48 @@
+#main {
+    position: relative;
+    padding: 0 30rpx 130rpx 30rpx;
+}
+.title {
+    padding-top: 58rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; color: #000; font-weight: bold;
+    box-sizing: content-box;
+}
+.content {
+    position: relative;
+    padding-top: 30rpx;
+}
+.list {
+    position: relative;
+    height: 100rpx;
+    border-bottom: 1px solid #D3D3D4;
+}
+.list text {
+    float: left;
+    height: 100rpx; 
+    line-height: 100rpx;
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+.list view {
+    float: right;
+    padding-left: 30rpx;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+}
+.list image {
+    width: 30rpx; height: 30rpx;
+}
+.btn {
+    position: fixed;
+    bottom: 40rpx; left: 0; right: 0;
+    margin: auto;
+    width: 500rpx; height: 80rpx;
+    line-height: 80rpx; text-align: center;
+    border-radius: 20rpx;
+    font-size: 30rpx; color: #fff;
+} 
+.all {
+    background-color: #CDCDF1;
+}

@@ -1,0 +1,166 @@
+<!--
+ * 文件描述：动起来更精彩
+ * 创建人：赵志银
+ * 创建时间：2020-04-09
+-->
+<wxs module='md_common' src='../../../../../utils/common.wxs'></wxs>
+
+<view id='main' wx:if='{{isReady}}'>
+    <!-- tab -->
+    <view class='tab'>
+        <view class='tablist {{tabName=="home"?"act":""}}' data-name='home' bindtap='changeTab'>
+            <view>家庭方案</view>
+            <view class='bg_main'></view>
+        </view>
+        <view class='tablist {{tabName=="major"?"act":""}}' data-name='major' bindtap='changeTab'>
+            <view>专业方案</view>
+            <view class='bg_main'></view>
+        </view>
+    </view>
+
+    <view class='content'>
+        <!-- 家庭方案 -->
+        <view class='conlist' wx:if='{{tabName=="home"}}'>
+
+            <view class='none' wx:if='{{md_common.isEmpty(dataObj.family.scheme)&&isReady}}'>
+                <image src='/images/pages/my/report/empty.png'></image>
+                <view>抱歉，暂无信息</view>
+            </view>
+
+            <view wx:if='{{!md_common.isEmpty(dataObj.family.scheme)&&isReady}}'>
+                <!-- 目标运动方案 -->
+                <view class='plan' wx:if='{{!md_common.isEmpty(dataObj.family.scheme)}}'>
+                    <view class='title'>目标运动方案</view>
+                    <view class='plancon'>
+                        <view class='plancontit'>
+                            <text>运动项目</text>
+                            <text>运动类别</text>
+                            <text>时长</text>
+                        </view>
+                        <view class='planconlist' wx:for='{{dataObj.family.scheme}}' wx:key='index'>
+                            <text class='text_ellipsis'>{{item.name}}</text>
+                            <text>{{item.kind+"运动"}}</text>
+                            <text>{{item.times+item.unit}}</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- 方案评价 -->
+                <view class='plan evaluate' wx:if='{{!md_common.isEmpty(dataObj.family.scheme_appraise)}}'>
+                    <view class='title'>方案评价</view>
+                    <view class='plancon'>
+                        <view class='evcontit'>
+                            <text>运动项目</text>
+                            <text>耗能</text>
+                            <text>减脂</text>
+                            <text>推荐次数</text>
+                        </view>
+                        <view class='evconlist' wx:for='{{dataObj.family.scheme_appraise}}' wx:key='index'>
+                            <text class='text_ellipsis'>{{item.name}}</text>
+                            <text class='text_ellipsis'>{{item.consume+item.consume_unit}}</text>
+                            <text class='text_ellipsis'>{{item.met+item.met_unit}}</text>
+                            <text class='text_ellipsis'>{{item.times+item.unit}}</text>
+                        </view>
+                    </view>
+                </view>
+
+                <!-- 打卡按钮分享 -->
+                <view class='clockBtn {{dataObj.family.can_mark!=1?"hasClock":"bg_main"}} btn' data-type='1' bindtap='clock' wx:if='{{!paramObj.isShare}}'>{{dataObj.family.can_mark!=1?"运动已打卡":"运动打卡"}}</view>
+                <view class='shareBtn bg_main btn' bindtap='share' data-type='family' wx:if='{{!paramObj.isShare}}'>分享</view>
+            </view>
+
+        </view>
+
+        <!-- 专业 -->
+        <view class='conlist' wx:if='{{tabName=="major"}}'>
+
+            <view class='none' wx:if='{{md_common.isEmpty(dataObj.pro.scheme)&&isReady}}'>
+                <image src='/images/pages/my/report/empty.png'></image>
+                <view>抱歉，暂无信息</view>
+            </view>
+
+            <view wx:if='{{!md_common.isEmpty(dataObj.pro.scheme)&&isReady}}'>
+                <!-- 目标运动方案 -->
+                <view class='plan' wx:if='{{!md_common.isEmpty(dataObj.pro.scheme)}}'>
+                    <view class='title'>目标运动方案</view>
+                    <view class='plancon'>
+                        <view class='plancontit'>
+                            <text>运动项目</text>
+                            <text>运动类别</text>
+                            <text>时长</text>
+                        </view>
+                        <view class='planconlist' wx:for='{{dataObj.pro.scheme}}' wx:key='index'>
+                            <text class='text_ellipsis'>{{item.name}}</text>
+                            <text>{{item.kind+"运动"}}</text>
+                            <text>{{item.times+item.unit}}</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- 方案评价 -->
+                <view class='plan evaluate' wx:if='{{!md_common.isEmpty(dataObj.pro.scheme_appraise)}}'>
+                    <view class='title'>方案评价</view>
+                    <view class='plancon'>
+                        <view class='evcontit'>
+                            <text>运动项目</text>
+                            <text>耗能</text>
+                            <text>减脂</text>
+                            <text>推荐次数</text>
+                        </view>
+                        <view class='evconlist' wx:for='{{dataObj.pro.scheme_appraise}}' wx:key='index'>
+                            <text class='text_ellipsis'>{{item.name}}</text>
+                            <text class='text_ellipsis'>{{item.consume+item.consume_unit}}</text>
+                            <text class='text_ellipsis'>{{item.met+item.met_unit}}</text>
+                            <text class='text_ellipsis'>{{item.times+item.unit}}</text>
+                        </view>
+                    </view>
+                </view>
+
+                <!-- 打卡按钮分享 -->
+                <view class='clockBtn {{dataObj.pro.can_mark!=1?"hasClock":"bg_main"}} btn' data-type='2' bindtap='clock' wx:if='{{!paramObj.isShare}}'>{{dataObj.pro.can_mark!=1?"运动已打卡":"运动打卡"}}</view>
+                <view class='shareBtn bg_main btn' bindtap='share' data-type='pro' wx:if='{{!paramObj.isShare}}'>分享</view>
+            </view>
+
+        </view>
+    </view>
+</view>
+
+<mdDialog id="mdDialog"></mdDialog>
+
+<!-- 家庭分享弹窗 -->
+<mdPopup id='mdPopupFam' isRound='true'>
+
+    <mdDialog id="mdDialogFam"></mdDialog>
+
+    <view class='sharePop'>
+        <mdPoster id='mdPosterFam' style='width:100%;height:900rpx;' canvasW='750' canvasH='900' randarH='508' r='180' nameList='{{dataObj.family.radar.name_list}}' dataList='{{dataObj.family.radar.data_list}}' title='我的运动雷达图' desc='规律的运动是追求幸福生活的筹码。'></mdPoster>
+        <view class='btnPopCon' wx:if='{{familyDrawObj.isSuccess}}'>
+            <button class='btnPop friPop bg_main' open-type='share'>
+                <image src='/images/pages/mineslim/health/sport/weichat.png'></image>
+                <view>微信好友</view>
+            </button>
+            <view class='btnPop localPop bg_main'>
+                <image src='/images/pages/mineslim/health/sport/local.png'></image>
+                <view bindtap='save' data-type='family'>保存至本地</view>
+            </view>
+        </view>
+    </view>
+</mdPopup>
+
+<!-- 专业分享弹窗 -->
+<mdPopup id='mdPopupPro' isRound='true'>
+
+    <mdDialog id="mdDialogPro"></mdDialog>
+
+    <view class='sharePop'>
+        <mdPoster id='mdPosterPro' style='width:100%;height:900rpx;' canvasW='750' canvasH='900' randarH='520' r='180' nameList='{{dataObj.pro.radar.name_list}}' dataList='{{dataObj.pro.radar.data_list}}' title='我的运动雷达图' desc='规律的运动是追求幸福生活的筹码。'></mdPoster>
+        <view class='btnPopCon' wx:if='{{ProDrawObj.isSuccess}}'>
+            <button class='btnPop friPop bg_main' open-type='share'>
+                <image src='/images/pages/mineslim/health/sport/weichat.png'></image>
+                <view>微信好友</view>
+            </button>
+            <view class='btnPop localPop bg_main'>
+                <image src='/images/pages/mineslim/health/sport/local.png'></image>
+                <view bindtap='save' data-type='pro'>保存至本地</view>
+            </view>
+        </view>
+    </view>
+</mdPopup>

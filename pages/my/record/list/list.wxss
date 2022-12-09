@@ -1,0 +1,136 @@
+page {
+    background-color: #fff;
+}
+#main {
+    position: relative;
+    padding: 0 30rpx 130rpx 30rpx;
+    width: 100%; height: 100%;
+}
+.hasNone {
+    background-color: #F7F8F8;
+}
+
+/* tab */
+.tab {
+    position: fixed;
+    top: 0; left: 0;
+    height: 88rpx; width: 100%;
+    line-height: 88rpx;
+    z-index: 1;
+    background-color: #fff;
+}
+.tab>view:first-of-type {
+    float: left;
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+.tab>view:nth-of-type(2) {
+    float: right;
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+.tablist>view:first-of-type {
+    font-size: 30rpx; color: #000; font-weight: bold;
+}
+.tablist.act>view:last-child {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 4rpx; width: 50rpx;
+    border-radius: 2rpx;
+}
+
+/* 列表 */
+.total {
+    position: relative;
+    padding-top: 88rpx;
+}
+.list {
+    position: relative;
+}
+.month {
+    padding: 62rpx 0 30rpx 0;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; color: #000; font-weight: bold;
+    box-sizing: content-box;
+}
+.content {
+    position: relative;
+    padding: 0 30rpx;
+    width: 100%; height: auto;
+    box-shadow:0px 20px 60px rgba(147,147,147,0.16);
+    border-radius: 20rpx;
+}
+.daylist {
+    position: relative;
+    height: 100rpx; 
+    line-height: 100rpx;
+    border-bottom: 1px solid #D3D3D4;
+}
+.content>view:last-of-type {
+    border-bottom: none;
+}
+.daylist>view:nth-of-type(1) {
+    float: left;
+    height: 100rpx; 
+    line-height: 100rpx;
+}
+.daylist>view:nth-of-type(1)>text:nth-of-type(1) {
+    display: inline-block;
+    height: 100rpx; 
+    line-height: 100rpx; vertical-align: top;
+    font-size: 30rpx;
+}
+.daylist>view:nth-of-type(1)>text:nth-of-type(2) {
+    display: inline-block;
+    height: 100rpx; 
+    line-height: 100rpx; vertical-align: top;
+    margin-left: 30rpx;
+    font-size: 36rpx;
+}
+.daylist>view:nth-of-type(2) {
+    float: right;
+    height: 100rpx; 
+    line-height: 100rpx;
+}
+.daylist>view:nth-of-type(2)>text {
+    display: inline-block;
+    margin-right: 28rpx;
+    height: 100rpx; 
+    line-height: 100rpx; vertical-align: top;
+    font-size: 30rpx;
+}
+.daylist>view:nth-of-type(2)>image {
+    display: inline-block;
+    margin: auto 0;
+    width: 16rpx; height: 30rpx;
+}
+.blue {
+    color: #5A5AD1;
+}
+.green {
+    color: #5BCD80;
+}
+.red {
+    color: #CC5C5C;
+}
+
+/* 置空页 */
+.none {
+    position: relative;
+    padding-top: 100rpx;
+    text-align: center;
+}
+.none image {
+    margin: auto;
+    width: 240rpx; height: 172rpx;
+}
+.none view {
+    margin-top: 20rpx;
+    height: 34rpx;
+    text-align: center; line-height: 34rpx;
+    font-size: 24rpx; color: #D3D3D4;
+}

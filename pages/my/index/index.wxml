@@ -1,0 +1,75 @@
+<!--
+ * 文件描述：我的-首页
+ * 创建人：赵志银
+ * 创建时间：2020-04-07
+-->
+
+<wxs module='md_common' src='../../../utils/common.wxs'></wxs>
+
+<view id='main'>
+<!-- 头部 -->
+    <view class='top'>
+        <image src='/images/pages/mineslim/index/MineSlim.png'></image>
+        <view class='bg_main infotop' wx:if='{{!md_common.isEmpty(dataObj)}}' bindtap='goInfo'>
+            <image src='{{!md_common.isEmpty(dataObj.avatar)?dataObj.avatar:"/images/pages/my/index/people.png"}}' mode='aspectFill' class='people'></image>
+            <view class='name text_ellipsis'>{{!md_common.isEmpty(dataObj.name)?dataObj.name:"未设置"}}</view>
+            <view class='phone'>{{!md_common.isEmpty(dataObj.phone)?dataObj.phone:"电话号码"}} | {{(!md_common.isEmpty(dataObj.address)&&dataObj.address!="未设置")?dataObj.address:"地址"}} | {{(!md_common.isEmpty(dataObj.sex)&&dataObj.sex!="未设置")?dataObj.sex:"性别"}}</view>
+            <view class='autograph text_ellipsis'>{{(!md_common.isEmpty(dataObj.introduce)&&dataObj.introduce!="未设置")?dataObj.introduce:"个性签名"}}</view>
+        </view>
+        <view class='bg_main infotop' wx:if='{{md_common.isEmpty(dataObj)}}' bindtap='goLogin'>
+            <image src='/images/pages/my/index/people.png' mode='widthFix' class='people'></image>
+            <view class='name'>您还未登录</view>
+        </view>
+    </view>
+
+    <!-- 我的 -->
+    <view class='my tab'>
+        <view class='title'>我的</view>
+        <view class='content'>
+            <view class='list' bindtap='goInfo'>
+                <image src='/images/pages/my/index/info.png'></image>
+                <text>我的信息</text>
+                <image src='/images/pages/my/index/back.png'></image>
+            </view>
+            <view class='list' bindtap='goReport'>
+                <image src='/images/pages/my/index/presentation.png'></image>
+                <text>我的报告</text>
+                <image src='/images/pages/my/index/back.png'></image>
+            </view>
+            <view class='list endlist' bindtap='goRecord'>
+                <image src='/images/pages/my/index/record.png'></image>
+                <text>我的记录</text>
+                <image src='/images/pages/my/index/back.png'></image>
+            </view>
+        </view>
+    </view>
+
+    <!-- 系统 -->
+    <view class='my tab'>
+        <view class='title'>系统</view>
+        <view class='content'>
+            <view class='list' bindtap='goFeedback'>
+                <image src='/images/pages/my/index/edit.png'></image>
+                <text>意见反馈</text>
+                <image src='/images/pages/my/index/back.png'></image>
+            </view>
+            <view class='list endlist' data-phone='400-826-9888' bindtap='callService'>
+                <image src='/images/pages/my/index/service.png'></image>
+                <text>售后服务</text>
+                <text class='color_main'>400 826 9888</text>
+                <image src='/images/pages/my/index/back.png'></image>
+            </view>
+        </view>
+    </view>
+
+    <!-- 版本 -->
+    <view class='edition color_gray' bindtap='getVersion'>版本号：{{versionObj.isVersion?versionObj.version:versionObj.subVersion}}</view>
+
+    <!-- 退出登录 -->
+    <button class='btn bg_main' bindtap='logout' wx:if='{{dataObj.is_login==1}}'> 退出登录</button>
+</view>
+
+<mdFoot currActive='my'></mdFoot>
+
+<mdDialog id="mdDialog"></mdDialog>
+<mdDialog id="mdDialogs"></mdDialog>

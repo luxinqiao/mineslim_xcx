@@ -1,0 +1,4 @@
+<view class='main'>
+	<canvas id='canvas' class='canvas' canvas-id='canvas' style='width:{{canvasW}}px;height:{{canvasH}}px;'></canvas>
+	<image id='canvasImg' class='canvasImg' src='{{canvasImg}}' style='height:{{canvasH/rate}}rpx;'></image>
+</view>

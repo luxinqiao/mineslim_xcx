@@ -1,0 +1,237 @@
+.md_dialog {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; align-items: center;
+    position: fixed; z-index: 1000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: transparent;
+}
+.md_dialog.shade {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.load {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    width: 200rpx; height: 190rpx;
+    z-index: 1;
+}
+
+/************************ 等待框（转圈） ************************/
+.md_dialog>.loading {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    width: 270rpx; height: 270rpx;
+}
+.md_dialog>.loading>image {
+    margin: 0 auto;
+    width: 200rpx; height: 190rpx;
+}
+.md_dialog>.loading>view {
+    text-align: center;
+    font-size: 28rpx;
+    color: #999;
+}
+
+/************************ 等待框（小球跳动） ************************/
+.md_dialog>.waiting {
+    padding: 24rpx 50rpx;
+    min-width: 300rpx; max-width: 80%;
+    text-align: center;
+    border-radius: 50rpx
+}
+.md_dialog>.waiting>view {
+    display: flex;
+    flex-direction: column; align-items: center;
+    border-radius: 10rpx;
+}
+.md_dialog>.waiting>view>image {
+    margin-bottom: 12rpx;
+    width: 80rpx; height: 80rpx;
+}
+.md_dialog>.waiting>view>text {
+    display: inline-block;
+    text-align: left;
+	font-size: 26rpx;
+    color: #fff;
+}
+
+/************************ 提示框（2s后消失） ************************/
+.md_dialog .tip {
+    padding: 18rpx 40rpx;
+    min-width: 300rpx; max-width: 80%;
+    text-align: center;
+    border-radius: 8rpx;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.md_dialog .tip .tip_con {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10rpx;
+}
+.md_dialog>.tip .tip_con .tip_tit {
+    display: inline-block;
+    text-align: center;
+    font-size: 28rpx;
+    color: #fff;
+    white-space:pre-wrap;
+}
+
+/************************ 确认框（内容+确认按钮） ************************/
+.md_dialog>.alert {
+    display: flex;
+    flex-direction: column;
+    width: 630rpx;
+    border-radius: 40rpx;
+    background-color: #fff;
+}
+.md_dialog>.alert>.content {
+    display: flex; align-items: center;
+    justify-content: center;
+    width: 630rpx; min-height: 200rpx;
+    padding: 40rpx 40rpx;
+    text-align: center; line-height: 52rpx;
+    font-size: 32rpx;
+}
+.md_dialog>.alert>.content>text {
+    display: inline-block;
+    text-align: left;
+}
+.md_dialog>.alert>.button {
+    margin: 0 auto;
+    width: 550rpx; height: 100rpx;
+    text-align: center; line-height: 100rpx;
+    border-top: 1rpx solid #D3D3D4;
+    font-size: 30rpx;
+    color: #000000;
+}
+
+/************************ 倒计时确认框（内容+确认按钮） ************************/
+.md_dialog>.alertCount {
+    display: flex;
+    flex-direction: column;
+    width: 540rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+.md_dialog>.alertCount>.content {
+    width: 540rpx; min-height: 170rpx;
+    padding: 40rpx 40rpx;
+    text-align: center; line-height: 52rpx;
+    font-size: 32rpx;
+}
+.md_dialog>.alertCount>.content>text {
+    display: inline-block;
+    text-align: left;
+}
+.md_dialog>.alertCount>.button {
+    width: 100%; height: 100rpx;
+    text-align: center; line-height: 100rpx;
+    border-top: 1rpx solid #eee;
+    font-size: 36rpx;
+    color: #74C1CA;
+}
+
+/************************ 选择框（内容+2个按钮） ************************/
+.md_dialog>.confirm {
+    display: flex;
+    flex-direction: column;
+    width: 630rpx;
+    border-radius: 40rpx;
+    background-color: #fff;
+}
+.md_dialog>.confirm>.content {
+    width: 630rpx; min-height: 200rpx;
+    padding: 80rpx 40rpx;
+    text-align: center; line-height: 52rpx;
+    font-size: 30rpx;
+}
+.md_dialog>.confirm>.content>text {
+    display: inline-block;
+    text-align: left;
+}
+.md_dialog>.confirm>.button {
+    margin: 0 auto;
+    width: 550rpx; height: 100rpx;
+    text-align: center; line-height: 100rpx;
+    font-size: 36rpx;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+.md_dialog>.confirm>.button>text:nth-child(1) {
+    width: 50%; height: 50rpx;
+    font-size: 30rpx; line-height: 50rpx;
+    border-bottom-left-radius: 10rpx;
+    background-color: white; color: #000;
+}
+.md_dialog>.confirm>.button>text:nth-child(2) {
+    width: 50%; height: 50rpx;
+    font-size: 30rpx; line-height: 50rpx;
+    border-left: 1px solid #eee;
+    border-bottom-right-radius: 10rpx;
+    color: #000; background-color: white;
+}
+
+/************************ 内容框（提示+自定义内容） ************************/
+.md_dialog>.contentBox{
+    margin: auto;
+    width: 670rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+.md_dialog>.contentBox>.title {
+    display: block;
+    width: 100%; height: 100rpx;
+    text-align: center; line-height: 100rpx;
+    border-bottom: 1px solid #eee;
+    border-top-left-radius: 10rpx; border-top-right-radius: 10rpx;
+}
+
+/************************ 输入框（提示+输入框+2个按钮） ************************/
+.md_dialog>.inputBox {
+    margin: auto;
+    width: 670rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+.md_dialog>.inputBox>.title {
+    display: block;
+    width: 100%; height: 100rpx;
+    text-align: center; line-height: 100rpx;
+    border-bottom: 1px solid #eee;
+    border-top-left-radius: 10rpx; border-top-right-radius: 10rpx;
+}
+.md_dialog>.inputBox>.button {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 100rpx;
+    text-align: center; line-height: 100rpx;
+    border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;
+}
+.md_dialog>.inputBox>.button>text:nth-child(1) {
+    float: left;
+    width: 50%; height: 100rpx;
+    font-size: 34rpx;
+    border-top: 1px solid #eee;
+    border-bottom-left-radius: 10rpx;
+    background-color: white;
+}
+.md_dialog>.inputBox>.button>text:nth-child(2) {
+    float: right;
+    width: 50%; height: 100rpx;
+    font-size: 34rpx;
+    border-top: 1px solid #eee; border-left: 1px solid #eee;
+    border-bottom-right-radius: 10rpx;
+    color: #74C1CA; background-color: white;
+}
+
+/************************ 自定义弹框（自定义内容） ************************/
+.md_dialog>.customize {
+    margin: auto;
+    border-radius: 16rpx;
+    background-color: #fff;
+}

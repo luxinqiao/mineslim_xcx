@@ -1,0 +1,318 @@
+#main {
+    position: relative;
+    padding-bottom: 220rpx;
+    background-color: #fff;
+}
+button {
+    padding: 0 !important;
+    text-align: left;
+    background-color: transparent;
+    overflow: visible;
+}
+button::after{
+    border:none !important;
+}
+button:not([size='mini']) {
+    width: auto;
+    margin: 0 !important;
+}
+    
+.button-hover {
+    background-color: transparent;
+}
+
+/* 头部 */
+.top {
+    position: relative;
+    padding-top: 110rpx;
+    width: 100%; height: 440rpx;
+    overflow-x: hidden;
+}
+.top>image {
+    position: absolute;
+    left: 30rpx; bottom: 40rpx;
+    width: 100rpx; height: 314rpx;
+}
+.log {
+    position: absolute;
+    left: -80rpx; top: 206rpx;
+    font-size: 72rpx;
+    line-height: 100rpx;
+    transform: rotate(-90deg); 
+}
+.tatol {
+    position: absolute;
+    top: 0; right: 0;
+    padding: 116rpx 0 40rpx 40rpx;
+    width: 550rpx; height: 100%;
+    border-radius: 0 0 0 40rpx;
+}
+.tatol view {
+    color: #fff;
+}
+.tatol>view:nth-child(1) {
+    height: 66rpx;
+    line-height: 66rpx;
+    font-size: 48rpx;
+}
+.tatol>view:nth-child(2) {
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 24rpx;
+}
+.toplist {
+    position: relative;
+    margin-top: 40rpx;
+    width: 100%;
+}
+.toplist .list {
+    position: relative;
+    display: inline-block;
+    width: 50%; height: 28rpx;
+    line-height: 28rpx;
+}
+.toplist>view:nth-child(3) {
+    margin-top: 24rpx;
+}
+.toplist .list view {
+    display: inline-block;
+    vertical-align: top;
+}
+.toplist .list .cir {
+    position: absolute;
+    top: 0; bottom: 0;
+    margin: auto; 
+    width: 14rpx; height: 14rpx;
+    border: 4rpx solid #fff;
+    border-radius:50%;    
+}
+.toplist .list .tag {
+    margin: 0 10rpx 0 20rpx; 
+    height: 28rpx;
+    line-height: 28rpx; 
+    font-size: 20rpx; 
+}
+.toplist .list .num {
+    height: 28rpx;
+    line-height: 28rpx;
+}
+.toplist .list .num text {
+    display: block;
+    height: 28rpx; line-height: 28rpx;
+    font-size: 30rpx; color: #fff;
+}
+.tatol>view:nth-child(4) {
+    margin-top: 30rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+}
+.tatol>image {
+    position: absolute;
+    bottom: 120rpx; right: 0;
+    width: 90rpx; height: 190rpx;
+}
+.tatol>view:nth-child(5) {
+    position: absolute;
+    bottom: 30rpx; right: -100rpx;
+    font-size: 266rpx; color: rgba(255, 255, 255, 0.3);
+}
+
+/* 关键指标 */
+.indicator {
+    position: relative;
+    margin: 60rpx auto 0 auto;
+    width: 690rpx; min-height: 520rpx;
+    border-radius: 20rpx;
+    box-shadow:0px 20px 60px rgba(147,147,147,0.16);
+}
+.indicator>.title {
+    position: relative;
+    padding: 30rpx;
+}
+.indicator>.title>view:nth-child(1) {
+    display: flex;
+    align-items: center;
+    height: 42rpx; 
+    line-height: 42rpx;
+}
+.indicator>.title>view:nth-child(1)>view {
+    font-size: 30rpx; color: #000;
+    font-weight: bold;
+}
+.indicator>.title>view:nth-child(1)>image {
+    margin-left: 30rpx;
+    width: 42rpx; height: 42rpx;
+}
+.indicator>.title>view:nth-child(2) {
+    position: absolute;
+    top: 30rpx; right: 30rpx;
+    display: flex;
+    align-items: center;
+    height: 34rpx; width: auto;
+    line-height: 34rpx;
+}
+.indicator>.title>view:nth-child(2)>view {
+    font-size: 24rpx; font-weight: bold;
+}
+.indicator>.title>view:nth-child(2)>image {
+    margin-left: 20rpx;
+    width: 20rpx; height: 20rpx;
+}
+.indicator>.title>.time {
+    height: 28rpx; 
+    line-height: 28rpx;
+    font-size: 20rpx;
+}
+.indcontent {
+    position: relative;
+    padding-bottom: 30rpx;
+    width: 690rpx; height: auto;
+}
+.indlist,.indcontent button {
+    position: relative;
+    display: inline-block;
+    width: 230rpx; height: 120rpx;
+    vertical-align: top;
+    background: linear-gradient(135deg,rgba(255,255,255,1) 0%,rgba(253,253,253,1) 51%,rgba(242,242,242,1) 100%);
+}
+.indcontent .rlist {
+    width: calc(100% - 460rpx);
+}
+.indlist>view:nth-child(1) {
+    padding: 16rpx 0 0 68rpx;
+}
+.indlist>view:nth-child(1)>view:nth-child(1) {
+    display: inline-block;
+    height: 44rpx;
+    line-height: 44rpx;
+    font-size: 32rpx; font-weight: 500;
+}
+.indlist>view:nth-child(1)>view:nth-child(2) {
+    display: inline-block;
+    margin:  0 0 4rpx 10rpx;
+    height: 28rpx; 
+    line-height: 28rpx;vertical-align: bottom;
+    font-size: 20rpx; color: #818181;
+}
+.indlist>view:nth-child(2) {
+    position: absolute;
+    bottom: 16rpx; left: 68rpx;
+    font-size: 24rpx;
+}
+.add>image {
+    position: absolute;
+    top: 22rpx; left: 0; right: 0;
+    margin: auto;
+    width: 40rpx; height: 40rpx;
+}
+.add>view:nth-child(2) {
+    position: absolute;
+    bottom: 16rpx; left: 0; right: 0;
+    margin: auto;
+    font-size: 20rpx; text-align: center;
+}
+
+/*检测解读  */
+.inspect {
+    position: relative;
+    margin-top: 60rpx;
+}
+.inspect .title {
+    padding-left: 32rpx; margin-bottom: 30rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 30rpx; font-weight: bold;
+}
+.inspect>view {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+}
+.inspectlist {
+    position: relative;
+    width: 330rpx !important; height: 260rpx;
+    background-color: #fff;
+    box-shadow:0px 20px 60px rgba(147,147,147,0.16);
+    border-radius: 20rpx;
+}
+.inspectlist>image {
+    position: absolute;
+    top: 98rpx; left: 30rpx;
+    width: 50rpx; height: 24rpx;
+}
+.inspect>view:nth-child(2)>view:nth-child(2)>image {
+    position: absolute;
+    top: 94rpx; left: 30rpx;
+    width: 34rpx; height: 34rpx;
+}
+.inspectlist>view {
+    position: absolute;
+    top: 90rpx; left: 100rpx;
+}
+.inspectlist>view>view:nth-child(1) {
+    margin-bottom: 14rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; font-weight: bold;
+}
+.inspectlist>view>view:nth-child(2) {
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+}
+/* 趋势 */
+.health {
+    position: relative;
+    margin-top: 60rpx;
+    height: 240rpx; 
+}
+.health .left {
+    position: absolute;
+    top: 0; left: 0;
+    height: 240rpx; width: 20rpx;
+    border-radius: 0 20rpx 20rpx 0;
+}
+.health .right {
+    position: absolute;
+    top: 0; left: 48rpx;
+    padding-left: 30rpx;
+    width: 670rpx; height: 240rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    box-shadow:0px 20px 60px rgba(147,147,147,0.16);
+}
+.right .date {
+    position: absolute;
+    top: 60rpx; left: 30rpx;
+    font-size: 20rpx; color: #818181;
+}
+.right .title {
+    margin-top: 100rpx;
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 24rpx; font-weight: bold;
+}
+.right>view:nth-child(3) {
+    margin-top: 20rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx;
+}
+
+/* 指标介绍 */
+.indibPop {
+    padding: 0 30rpx 48rpx 30rpx;
+    border-radius: 40rpx 40rpx 0 0;
+}
+.indibPop .title {
+    padding: 60rpx 0 30rpx 0;
+    font-size: 36rpx;
+    text-align: center; font-weight: bold;
+}
+.indibPop .list {
+    line-height: 48rpx;
+}
+.indibPop .list>text {
+    font-size: 24rpx;
+}

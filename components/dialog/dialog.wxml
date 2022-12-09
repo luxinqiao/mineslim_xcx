@@ -1,0 +1,81 @@
+<!--
+	文件描述：弹出框组件
+	创建人：卢信桥
+	创建时间：2020-03-19
+-->
+<view class='{{type != "load"?"md_dialog":""}} {{(type=="tip"||type=="loading"||type=="customize_nobg" || type=="coverTip")?"":"shade"}}' wx:if='{{isShow}}'>
+    <!------------------------ 局部等待框（转圈） ------------------------>
+    <image src='/components/dialog/loading.gif' class="load" wx:if='{{type=="load"}}' style='{{loadStyle}}'></image>
+
+	<!------------------------ 全局等待框（转圈） ------------------------>
+    <view class="loading" wx:if='{{type=="loading"}}'>
+        <image src='/components/dialog/loading.gif'></image>
+        <view>加载中...</view>
+    </view>
+	<!------------------------ 等待框（小球跳动） ------------------------>
+    <view class='waiting' wx:if='{{type=="waiting"}}'>
+        <view>
+            <image src="/components/images/waiting.png"></image>
+            <text>{{waitingObj.content}}</text>
+        </view>
+    </view>
+	<!------------------------ 提示框（2s后消失） ------------------------>
+    <cover-view class='tip' wx:if='{{type=="coverTip"}}'>
+        <cover-view class='tip_con'>
+            <cover-view class='tip_tit'> {{coverTipObj.content}} </cover-view>
+        </cover-view>
+    </cover-view>
+
+    <!------------------------ 提示框（2s后消失） ------------------------>
+    <view class='tip' wx:if='{{type=="tip"}}'>
+        <view class='tip_con'>
+            <view class='tip_tit'>{{tipObj.content}}</view>
+        </view>
+    </view>
+	<!------------------------ 确认框（内容+确认按钮） ------------------------>
+    <view class='alert' wx:if='{{type=="alert"}}'>
+        <view class='content'>
+            <text>{{alertObj.content}}</text>
+        </view>
+        <text class='button' bindtap='tapAlert'>{{alertObj.btnText}}</text>
+    </view>
+	<!------------------------ 倒计时确认框（内容+确认按钮） ------------------------>
+    <view class='alertCount' wx:if='{{type=="alertCount"}}'>
+        <view class='content'>
+            <text>{{alertCountObj.content}}</text>
+        </view>
+        <text class='button' bindtap='tapAlertCount'>{{alertCountObj.btnText}}({{alertCountObj.count}}s)</text>
+    </view>
+	<!------------------------ 选择框（内容+2个按钮） ------------------------>
+    <view class='confirm' wx:if='{{type=="confirm"}}'>
+        <view class='content'>
+            <text>{{confirmObj.content}}</text>
+        </view>
+        <view class='button'>
+            <text bindtap='tapConfirmLeft'>{{confirmObj.leftText}}</text>
+            <text bindtap='tapConfirmRight'>{{confirmObj.rightText}}</text>
+        </view>
+    </view>
+	<!------------------------ 内容框（提示+自定义内容） ------------------------>
+    <view class='contentBox' wx:if='{{type=="content"}}'>
+        <text class='title'>提示</text>
+        <slot></slot>
+    </view>
+    <!------------------------ 输入框（提示+输入框+2个按钮） ------------------------>
+    <view class='inputBox' wx:if='{{type=="inputBox"}}'>
+        <text class='title'>提示</text>
+        <input placeholder="请输入手机号码" maxlength="11" type="tel" bindinput="getInput" />  
+        <view class='button'>
+            <text bindtap='tapConfirmLeft'>{{confirmObj.leftText}}</text>
+            <text bindtap='tapConfirmRight'>{{confirmObj.rightText}}</text>
+        </view>
+    </view>
+    <!------------------------ 自定义弹框（自定义内容） ------------------------>
+    <view class='customize' wx:if='{{type=="customize"}}'>
+        <slot></slot>
+    </view>
+    <!------------------------ 自定义弹框无遮罩（自定义内容） ------------------------>
+    <view class='customize' wx:if='{{type=="customize_nobg"}}'>
+        <slot></slot>
+    </view>
+</view>

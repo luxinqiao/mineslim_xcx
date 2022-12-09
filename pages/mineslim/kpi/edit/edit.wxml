@@ -1,0 +1,22 @@
+<!--
+ * 文件描述：关键指标编辑
+ * 创建人：赵志银
+ * 创建时间：2020-04-08
+-->
+<view id='main'>
+    <view class='title'>已选定的指标</view>
+    <view class='content'>
+        <view class='list' wx:for='{{hasDataArr}}' wx:key='index'>
+            <text>{{item.name}}</text>
+            <view bindtap='dele' data-id='{{item.id}}'>
+                <image src='/images/pages/mineslim/kpi/edit/delete.png'></image>
+            </view>
+        </view>
+    </view>
+
+    <view class='btn {{addDataObj.id.length>0?"bg_main":"all"}}' bindtap='add'>新增指标</view>
+</view>
+
+<mdSelect id='mdSelect' title='新增指标' dataList='{{addDataObj.name}}' currIndex='{{currIndex}}' bind:bindComplete='bindComplete'></mdSelect>
+
+<mdDialog id="mdDialog"></mdDialog>

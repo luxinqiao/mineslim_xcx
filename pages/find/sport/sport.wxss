@@ -1,0 +1,189 @@
+#know {
+	padding-top: 60rpx;
+}
+
+#knowTop {
+	position: relative;
+	height: 42rpx;
+}
+
+#knowTop>text:nth-child(1) {
+	position: absolute;
+	top: 0; left: 30rpx;
+	height: 42rpx;
+	line-height: 42rpx;
+	font-size: 30rpx; font-weight: bold;
+}
+#knowTop>view:nth-child(2) {
+	position: absolute;
+	top: 0; right: 30rpx;
+	height: 42rpx;
+}
+#knowTop>view:nth-child(2)>text {
+	float: left;
+	height: 42rpx;
+	line-height: 42rpx;
+	font-size: 30rpx; font-weight: bold;
+}
+#knowTop>view:nth-child(2)>image {
+	float: left;
+	margin: 10rpx 0 0 10rpx;
+	width: 20rpx; height: 20rpx;
+}
+
+#knowContent {
+	margin: 30rpx 30rpx 0 30rpx; padding: 30rpx;
+	border-radius: 20rpx;
+	background-color: #fff;
+	box-shadow:0 20rpx 60rpx rgba(147,147,147,0.16);
+}
+#knowContent>.head {
+	position: relative;
+	height: 34rpx;
+}
+#knowContent>.head>text {
+	position: absolute;
+	font-size: 24rpx;
+}
+#knowContent>.head>text:nth-child(1) {
+	left: 0; top: 0;
+	padding-left: 20rpx;
+	width: 33%;
+	text-align: left;
+}
+#knowContent>.head>text:nth-child(2) {
+	right: 0; top: 0;
+	padding-right: 20rpx;
+	width: 33%;
+	text-align: right;
+}
+#knowContent>.row {
+	position: relative;
+	margin-top: 30rpx;
+	height: 80rpx;
+	border-radius: 20rpx;
+	background-color: #f8f8f8;
+}
+#knowContent>.row>text {
+	position: absolute;
+	height: 80rpx;
+	line-height: 80rpx;
+}
+#knowContent>.row>text:nth-child(1) {
+	left: 0; top: 0;
+	padding-left: 20rpx;
+	width: 33%;
+	text-align: left;
+	font-size: 30rpx; font-weight: bold;
+}
+#knowContent>.row>text:nth-child(2) {
+	right: 0; top: 0;
+	padding-right: 20rpx;
+	width: 33%;
+	text-align: right;
+	font-size: 24rpx;
+}
+
+#compare {
+	padding: 60rpx 0 40rpx 0;
+}
+
+#compareTop {
+	position: relative;
+	height: 42rpx;
+}
+#compareTop>text {
+	position: absolute;
+	top: 0; left: 30rpx;
+	height: 42rpx;
+	line-height: 42rpx;
+	font-size: 30rpx; font-weight: bold;
+}
+
+#compareContent {
+	margin: 30rpx 30rpx 0 30rpx; padding: 30rpx;
+	border-radius: 20rpx;
+	background-color: #fff;
+	box-shadow:0 20rpx 60rpx rgba(147,147,147,0.16);
+}
+#compareContent>.head {
+	position: relative;
+	height: 34rpx;
+}
+#compareContent>.head>view {
+	position: absolute;
+}
+#compareContent>.head>view:nth-child(1) {
+	left: 0; top: 0;
+	width: 34%;
+	text-align: left;
+}
+#compareContent>.head>view:nth-child(1)>text {
+	float: left;
+	height: 42rpx; max-width: 180rpx;
+	line-height: 42rpx;
+	font-size: 30rpx; font-weight: bold;
+}
+#compareContent>.head>view:nth-child(1)>image {
+	float: left;
+	margin: 10rpx 0 0 10rpx;
+	width: 20rpx; height: 20rpx;
+}
+#compareContent>.head>view:nth-child(2) {
+	left: 0; right: 0; top: 6rpx;
+	margin: auto;
+	width: 34%;
+	text-align: center;
+	font-size: 24rpx;
+}
+#compareContent>.head>view:nth-child(3) {
+	right: 0; top: 0;
+	width: 33%;
+	text-align: right;
+}
+#compareContent>.head>view:nth-child(3)>text {
+	position: absolute;
+	top: 0; right: 30rpx;
+	height: 42rpx; max-width: 180rpx;
+	line-height: 42rpx;
+	font-size: 30rpx; font-weight: bold;
+}
+#compareContent>.head>view:nth-child(3)>image {
+	position: absolute;
+	top: 10rpx; right: 0;
+	width: 20rpx; height: 20rpx;
+}
+
+#compareContent>.row {
+	position: relative;
+	margin-top: 30rpx;
+	height: 80rpx;
+	border-radius: 20rpx;
+	background-color: #f8f8f8;
+}
+#compareContent>.row>text {
+	position: absolute;
+	height: 80rpx;
+	line-height: 80rpx;
+}
+#compareContent>.row>text:nth-child(1) {
+	left: 0; top: 0;
+	padding-left: 20rpx;
+	width: 33%;
+	text-align: left;
+	font-size: 24rpx;
+}
+#compareContent>.row>text:nth-child(2) {
+	left: 0; right: 0; top: 0;
+	margin: auto;
+	width: 34%;
+	text-align: center;
+	font-size: 30rpx; font-weight: bold;
+}
+#compareContent>.row>text:nth-child(3) {
+	right: 0; top: 0;
+	padding-right: 20rpx;
+	width: 33%;
+	text-align: right;
+	font-size: 24rpx;
+}

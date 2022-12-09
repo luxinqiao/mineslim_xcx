@@ -1,0 +1,138 @@
+#main {
+    position: relative;
+    padding-bottom: 240rpx;
+    background-color: #fff;
+}
+/* 头部 */
+.top {
+    position: relative;
+    padding-top: 110rpx;
+    width: 100%; height: 440rpx;
+}
+.top>image {
+    position: absolute;
+    left: 30rpx; bottom: 40rpx;
+    width: 100rpx; height: 314rpx;
+}
+.infotop {
+    position: absolute;
+    top: 0; right: 0;
+    width: 550rpx; height: 100%;
+    border-radius: 0 0 0 40rpx;
+}
+.people {
+    position: absolute;
+    top: 130rpx; left: 40rpx;
+    height: 120rpx; width: 120rpx;
+    border-radius: 20rpx;
+}
+.name {
+    position: absolute;
+    bottom: 126rpx; left: 40rpx;
+    height: 42rpx; width: 470rpx;
+    line-height: 42rpx;
+    font-size: 30rpx; color: #fff;
+}
+.phone {
+    position: absolute;
+    bottom: 78rpx; left: 40rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    font-size: 20rpx; color: #fff;
+}
+.autograph {
+    position: absolute;
+    bottom: 40rpx; left: 40rpx;
+    height: 28rpx; width: 400rpx;
+    line-height: 28rpx;
+    font-size: 20rpx; color: #fff;
+}
+
+/* 我的 */
+button {
+    width: auto; min-height: 0;
+    padding: 0 !important; margin: 0;
+    background-color: transparent; border-radius: 0 !important;
+    border: none; outline: none;
+    font-weight: normal !important; text-align: left;
+}
+button::after{
+    border:none;
+    content: none;
+}
+.button-hover{
+    background-color: transparent;
+}
+
+.tab {
+    position: relative;
+    padding: 60rpx 30rpx 0 30rpx;
+}
+.tab .title {
+    margin-bottom: 30rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size:30rpx; color: #000; font-weight: bold;
+}
+.tab .content {
+    position: relative;
+    width: 100%;
+    box-shadow:0px 20px 60px rgba(147,147,147,0.16);
+    border-radius: 20rpx;
+}
+.tab .list {
+    position: relative;
+    height: 100rpx; width: 630rpx;
+    margin: auto;
+    border-bottom: 1px solid #D3D3D4;
+}
+.tab .list>image:nth-child(1) {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    margin: auto;
+    width: 40rpx; height: 40rpx;
+}
+.tab .list>text:nth-of-type(1) {
+    position: absolute;
+    top: 0; bottom: 0; left: 70rpx;
+    margin: auto;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx;
+}
+.tab .list>text:nth-of-type(2) {
+    position: absolute;
+    top: 0; bottom: 0; right: 50rpx;
+    margin: auto;
+    height: 42rpx;
+    line-height: 42rpx;
+    font-size: 30rpx;
+}
+.tab .list>image:last-child {
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    margin: auto;
+    width: 16rpx; height: 30rpx;
+}
+.tab .endlist {
+    border-bottom: 0;
+}
+
+/* 版本 */
+.edition {
+    margin-top: 120rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+/* 退出登录 */
+.btn {
+    margin-top: 60rpx;
+    width: 500rpx !important; height: 80rpx;
+    line-height: 80rpx; text-align: center;
+    border-radius: 20rpx !important;
+    color: #fff; font-size: 30rpx;
+}
+.btn.button-hover{
+    background-color: #5A5AD1;
+}

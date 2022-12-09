@@ -1,0 +1,6 @@
+{
+	"navigationBarTitleText": "运动知多少",
+	"usingComponents": {
+		"mdSearch": "/components/search/search"
+	}
+}
